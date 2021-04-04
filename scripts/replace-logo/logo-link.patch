@@ -1,0 +1,26 @@
+diff --git a/src/components/stage-header/stage-header.jsx b/src/components/stage-header/stage-header.jsx
+index 4084f6bfc..82520dcc8 100644
+--- a/src/components/stage-header/stage-header.jsx
++++ b/src/components/stage-header/stage-header.jsx
+@@ -68,7 +68,7 @@ const StageHeaderComponent = function (props) {
+         const stageButton = showBranding ? (
+             <div className={styles.embedScratchLogo}>
+                 <a
+-                    href="https://scratch.mit.edu"
++                    href="https://xcratch.github.io"
+                     rel="noopener noreferrer"
+                     target="_blank"
+                 >
+diff --git a/src/playground/render-gui.jsx b/src/playground/render-gui.jsx
+index 0f15fbfa7..26f5429d2 100644
+--- a/src/playground/render-gui.jsx
++++ b/src/playground/render-gui.jsx
+@@ -8,7 +8,7 @@ import HashParserHOC from '../lib/hash-parser-hoc.jsx';
+ import log from '../lib/log.js';
+ 
+ const onClickLogo = () => {
+-    window.location = 'https://scratch.mit.edu';
++    window.location = 'https://xcratch.github.io';
+ };
+ 
+ const handleTelemetryModalCancel = () => {
