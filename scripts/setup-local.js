@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { execSync } = require('child_process')
 
 const VmRoot = path.resolve(__dirname, '../../scratch-vm');
 const GuiRoot = path.resolve(__dirname, '../../scratch-gui');
@@ -15,6 +16,14 @@ try {
         fs.symlinkSync(VmRoot, VmModulePath);
         console.log(`Make link: ${VmModulePath} -> ${fs.readlinkSync(VmModulePath)}`);
     }
+} catch (err) {
+    console.log(err);
+}
+
+// Setup for dev server
+try {
+    execSync(`cd ${GuiRoot} && patch -p1 -N -s < ${path.resolve(__dirname, 'dev_server.patch')}`);
+    console.log(`Apply patch: dev_server.patch`);
 } catch (err) {
     console.log(err);
 }

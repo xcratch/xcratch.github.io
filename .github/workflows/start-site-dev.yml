@@ -15,7 +15,7 @@ jobs:
           repository: yokobond/scratch-gui
           ref: xcratch-dev
           path: ./scratch-gui
-      - run: npm ci
+      - run: npm install
         working-directory: ./scratch-gui
       - run: npm install https://github.com/yokobond/scratch-vm.git#xcratch-dev
         working-directory: ./scratch-gui
