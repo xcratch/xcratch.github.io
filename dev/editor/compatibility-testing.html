@@ -7,7 +7,22 @@
     <link rel="shortcut icon" href="static/favicon.ico">
     <title>Scratch 3.0 GUI: Compatibility Testing</title>
     
-  </head>
+  <link rel="manifest" href="manifest.7bd7396f584f21b4c55a04a58011c1ae.json" crossorigin="use-credentials" /></head>
   <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function (err) {
+            console.log('Worker registration failed', err);
+          }).catch(function (err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
   <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/compatibilitytesting.js"></script></body>
 </html>
