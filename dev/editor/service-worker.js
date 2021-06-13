@@ -107,68 +107,122 @@ define("./service-worker.js",['./workbox-2a8a8a96'], function (workbox) { 'use s
     "url": "326c5f98902ccd335b5b.worker.js",
     "revision": null
   }, {
+    "url": "326c5f98902ccd335b5b.worker.js.map",
+    "revision": "a877fb1e9a4260e9c995abbbdb054920"
+  }, {
     "url": "blocks-only.html",
-    "revision": "7eaba74c3660b15923fb9969c449e589"
+    "revision": "1398c33ea15d753a44e8dee28cbbf4de"
   }, {
     "url": "chunks/am-steps.js",
     "revision": "797dd5dda917e0baa45bc991392b0f20"
   }, {
+    "url": "chunks/am-steps.js.map",
+    "revision": "e7d419fa0f2500c9c58a2bb3a9379953"
+  }, {
     "url": "chunks/ar-steps.js",
     "revision": "bf89477c2e7730ebdfd7e042bf77ec6c"
+  }, {
+    "url": "chunks/ar-steps.js.map",
+    "revision": "69374f3cfd12ea00df014c490b2dd682"
   }, {
     "url": "chunks/blocksonly.js",
     "revision": "95531038cfa411c4a9204d64f40f04bf"
   }, {
+    "url": "chunks/blocksonly.js.map",
+    "revision": "fa71d69353f1b59a1c7082212a29c48d"
+  }, {
     "url": "chunks/compatibilitytesting.js",
     "revision": "88a0a09aaf2467ab6f8219e73116f9b6"
+  }, {
+    "url": "chunks/compatibilitytesting.js.map",
+    "revision": "8f44a83bc2884a3b22bf5cef34606bfb"
   }, {
     "url": "chunks/es-steps.js",
     "revision": "f2529cdbf4b09af692d18635283fdf61"
   }, {
+    "url": "chunks/es-steps.js.map",
+    "revision": "b1af83906676ba6c4429f4dea17eef31"
+  }, {
     "url": "chunks/fr-steps.js",
     "revision": "8291b7e72217c9c2f8ab55a92b2bbc72"
+  }, {
+    "url": "chunks/fr-steps.js.map",
+    "revision": "b6e07e69fe67c94729c40d1f967ec1c5"
   }, {
     "url": "chunks/gui.js",
     "revision": "aa1610903ca66662febf8cfe7007ba46"
   }, {
+    "url": "chunks/gui.js.map",
+    "revision": "f2ec2293b843c3a61a11cf8aeedcfdac"
+  }, {
     "url": "chunks/ja-steps.js",
     "revision": "7ea3b3572ce675711a2abf7e262a81e5"
+  }, {
+    "url": "chunks/ja-steps.js.map",
+    "revision": "9ac35c0d2ac6a35a8e0a18bf7b52bcc7"
   }, {
     "url": "chunks/player.js",
     "revision": "57d3ca68e0b73389a20288438858d608"
   }, {
+    "url": "chunks/player.js.map",
+    "revision": "bd44dc4763ac0550cc55cf30412555b7"
+  }, {
     "url": "chunks/pt_BR-steps.js",
     "revision": "635faeccd34ea4ca8456417a593356f2"
+  }, {
+    "url": "chunks/pt_BR-steps.js.map",
+    "revision": "81b54af4399a3f5cbb206e9c1dbd2fa9"
   }, {
     "url": "chunks/sw-steps.js",
     "revision": "0190a926001bf2d415480b95e3122da7"
   }, {
+    "url": "chunks/sw-steps.js.map",
+    "revision": "b4699199aa706aee3224e58939222810"
+  }, {
     "url": "chunks/tr-steps.js",
     "revision": "23595b9ce7bdebc2ba26ff7c7df0b9e3"
+  }, {
+    "url": "chunks/tr-steps.js.map",
+    "revision": "b0199db781c550cc1ecf92119ad74347"
   }, {
     "url": "chunks/uk-steps.js",
     "revision": "34dea7c0511c646652d8f0c875a19598"
   }, {
+    "url": "chunks/uk-steps.js.map",
+    "revision": "9fe8321526dcd79c04b41eb50d270177"
+  }, {
     "url": "chunks/zh_CN-steps.js",
     "revision": "ef1c001e2ce227fc7e2d463f25ed8e26"
+  }, {
+    "url": "chunks/zh_CN-steps.js.map",
+    "revision": "b779b7bbc9fd9d4f48fdf109b2702c3a"
   }, {
     "url": "chunks/zh_TW-steps.js",
     "revision": "0a053910dfa7eb3169de3df72220cf34"
   }, {
+    "url": "chunks/zh_TW-steps.js.map",
+    "revision": "8d630582ce77ba5d15065ee99665b2c4"
+  }, {
     "url": "chunks/zu-steps.js",
     "revision": "28b8c831650dbbed9181d0cb736892c0"
   }, {
+    "url": "chunks/zu-steps.js.map",
+    "revision": "3f573516286495f85568db0d98d21fb4"
+  }, {
     "url": "compatibility-testing.html",
-    "revision": "564c9a8176584010cbc12b8d5410818c"
+    "revision": "b697d1161a30b73639b14197d9353eab"
   }, {
     "url": "index.html",
-    "revision": "0a0db82afedf5794d165ebd5af445f44"
+    "revision": "7de20dc797ffb0c5f78557ab6838fa53"
   }, {
     "url": "lib.min.js",
     "revision": "027560782ee110508521d5a980522ea1"
   }, {
+    "url": "lib.min.js.map",
+    "revision": "382f73d739c8dff12ece8502012bcd94"
+  }, {
     "url": "player.html",
-    "revision": "530a62510e2c49476cdea145cde6e699"
+    "revision": "4a515148d1a871829a55b41b1472b3c8"
   }, {
     "url": "static/assets/0003d379a621d85693a57795339255cd.png",
     "revision": "0003d379a621d85693a57795339255cd"
