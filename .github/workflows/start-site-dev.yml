@@ -26,6 +26,8 @@ jobs:
           path: ./xcratch.github.io
       - run: node ./scripts/replace-logo.js ../scratch-gui
         working-directory: ./xcratch.github.io
+      - run: node ./scripts/original-assets.js ../scratch-gui
+        working-directory: ./xcratch.github.io
       - run: npm run build
         working-directory: ./scratch-gui
       - run: cp ./xcratch.github.io/editor/index.html ./scratch-gui/build/index.html

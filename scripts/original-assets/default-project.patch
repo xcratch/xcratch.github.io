@@ -1,0 +1,26 @@
+diff --git a/src/lib/default-project/project-data.js b/src/lib/default-project/project-data.js
+index 9ee63b237..904485d5c 100644
+--- a/src/lib/default-project/project-data.js
++++ b/src/lib/default-project/project-data.js
+@@ -79,8 +79,8 @@ const projectData = translateFunction => {
+                         bitmapResolution: 1,
+                         md5ext: 'bcf454acf82e4504149f7ffe07081dbc.svg',
+                         dataFormat: 'svg',
+-                        rotationCenterX: 48,
+-                        rotationCenterY: 50
++                        rotationCenterX: 72.5,
++                        rotationCenterY: 27.5
+                     },
+                     {
+                         assetId: '0fb9be3e8397c983338cb71dc84d0b25',
+@@ -88,8 +88,8 @@ const projectData = translateFunction => {
+                         bitmapResolution: 1,
+                         md5ext: '0fb9be3e8397c983338cb71dc84d0b25.svg',
+                         dataFormat: 'svg',
+-                        rotationCenterX: 46,
+-                        rotationCenterY: 53
++                        rotationCenterX: 72.5,
++                        rotationCenterY: 27.5
+                     }
+                 ],
+                 sounds: [

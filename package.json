@@ -4,7 +4,7 @@
   "description": "Extendable Scratch3 Programming Environment",
   "main": "scripts/setup-local.js",
   "scripts": {
-    "setup:local": "node ./scripts/setup-local.js && node ./scripts/replace-logo.js \"../scratch-gui\"",
+    "setup:local": "node ./scripts/setup-local.js && node ./scripts/replace-logo.js \"../scratch-gui\" && node ./scripts/original-assets.js \"../scratch-gui\"",
     "start:local": "cd ../scratch-gui && npm run start -- --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
