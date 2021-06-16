@@ -1,0 +1,47 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.f66f6a6bc8d3909019d2e5854ccc376e.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon_512x512.4d9f0db65b0ba221301c318f2441df4b.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.c5f9e61d2bf0bfe7f49722ade3ed046d.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.edc81f89cab2bf0ebcb7ad20ecaff6a0.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.63a2babeb5f6b125a6ce815dae1c34cc.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.d4f868a21d265a2f9c19e69b95b27055.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.a7471ca9cf3e6fbfcddabdf8c7a7575f.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Xcratch",
+  "short_name": "Xcratch",
+  "orientation": "any",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Extendable Scratch3 mod",
+  "background_color": "#ffffff"
+}

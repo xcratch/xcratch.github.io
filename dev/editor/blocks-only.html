@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <title>Scratch 3.0 GUI: Blocks Only Example</title>
+    
+  <meta name="apple-mobile-web-app-title" content="Xcratch" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="default" /><link rel="manifest" href="manifest.bb1f81da93fa43f671af50cb8f00664c.json" crossorigin="use-credentials" /></head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+            console.log('PWA worker registration successful', registration.scope);
+          }, function (err) {
+            console.log('PWA worker registration failed', err);
+          }).catch(function (err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
+  <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/blocksonly.js"></script></body>
+</html>
