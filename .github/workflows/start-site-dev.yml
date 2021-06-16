@@ -30,7 +30,6 @@ jobs:
         working-directory: ./xcratch.github.io
       - run: npm run build
         working-directory: ./scratch-gui
-      - run: cp ./xcratch.github.io/editor/index.html ./scratch-gui/build/index.html
       - run: cp ./xcratch.github.io/editor/favicon.ico ./scratch-gui/build/static/favicon.ico
       - run: mv -T ./xcratch.github.io/public ./public
       - run: mv -T ./scratch-gui/build ./public/editor
