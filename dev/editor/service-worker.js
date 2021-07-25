@@ -126,10 +126,10 @@ define("./service-worker.js",['./workbox-2a8a8a96'], function (workbox) { 'use s
     "revision": "8f44a83bc2884a3b22bf5cef34606bfb"
   }, {
     "url": "chunks/gui.js",
-    "revision": "aa1610903ca66662febf8cfe7007ba46"
+    "revision": "9202361a7dbe71d3a7709a8bcb426cc1"
   }, {
     "url": "chunks/gui.js.map",
-    "revision": "f2ec2293b843c3a61a11cf8aeedcfdac"
+    "revision": "fd8155f8a365d1f04085ea034ec6da87"
   }, {
     "url": "chunks/player.js",
     "revision": "57d3ca68e0b73389a20288438858d608"
@@ -4137,10 +4137,10 @@ define("./service-worker.js",['./workbox-2a8a8a96'], function (workbox) { 'use s
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "b521158d1f76f4952feb24ae993344f2"
+    "revision": "ed73105ad6b297fb01647e9a7526ba84"
   }, {
     "url": "lib.min.js.map",
-    "revision": "5ed381f942652c73cb9acb6410855211"
+    "revision": "fd970f9ad08d4ed9a3ce232909e833da"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
