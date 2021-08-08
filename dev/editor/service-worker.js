@@ -81,7 +81,7 @@ if (!self.define) {
     });
   };
 }
-define("./service-worker.js",['./workbox-2a8a8a96'], function (workbox) { 'use strict';
+define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -4137,10 +4137,10 @@ define("./service-worker.js",['./workbox-2a8a8a96'], function (workbox) { 'use s
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "ed73105ad6b297fb01647e9a7526ba84"
+    "revision": "0a93dca0730347f62ad7335e58d1504f"
   }, {
     "url": "lib.min.js.map",
-    "revision": "fd970f9ad08d4ed9a3ce232909e833da"
+    "revision": "313a46fa66f6cc7411629ccde00db41d"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
