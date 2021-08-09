@@ -98,6 +98,11 @@ if (false) {}
 
 
 
+var openEditor = function openEditor() {
+  var editorPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/player"));
+  window.open(window.location.protocol + '//' + window.location.host + editorPath + window.location.hash);
+};
+
 var Player = function Player(_ref) {
   var isPlayerOnly = _ref.isPlayerOnly,
       onSeeInside = _ref.onSeeInside,
@@ -105,8 +110,8 @@ var Player = function Player(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_box_box_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(isPlayerOnly ? _player_css__WEBPACK_IMPORTED_MODULE_11___default.a.stageOnly : _player_css__WEBPACK_IMPORTED_MODULE_11___default.a.editor)
   }, isPlayerOnly && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-    onClick: onSeeInside
-  }, 'See inside'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onClick: openEditor
+  }, 'Open Editor'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
     canEditTitle: true,
     enableCommunity: true,
     isPlayerOnly: isPlayerOnly,

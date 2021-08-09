@@ -132,10 +132,10 @@ define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use s
     "revision": "fd8155f8a365d1f04085ea034ec6da87"
   }, {
     "url": "chunks/player.js",
-    "revision": "57d3ca68e0b73389a20288438858d608"
+    "revision": "f086e7266467d4a787a49072fae70bc4"
   }, {
     "url": "chunks/player.js.map",
-    "revision": "bd44dc4763ac0550cc55cf30412555b7"
+    "revision": "4510690069c0b32616f7fbac91e1043a"
   }, {
     "url": "compatibility-testing.html",
     "revision": "cd62855f638056ea17f0db2acb88676f"
