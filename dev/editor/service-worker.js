@@ -4137,10 +4137,10 @@ define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use s
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "801f35f235e83453db88d9191ae2389e"
+    "revision": "a1f812b872ee11cd35545d3d32d9c7ff"
   }, {
     "url": "lib.min.js.map",
-    "revision": "0826425baee73a191b9198dc4bc8d085"
+    "revision": "55f6a6ff43a11f7a6c3f8856c55b25fc"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
