@@ -81,7 +81,7 @@ if (!self.define) {
     });
   };
 }
-define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use strict';
+define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -132,10 +132,10 @@ define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use s
     "revision": "fd8155f8a365d1f04085ea034ec6da87"
   }, {
     "url": "chunks/player.js",
-    "revision": "f086e7266467d4a787a49072fae70bc4"
+    "revision": "57d3ca68e0b73389a20288438858d608"
   }, {
     "url": "chunks/player.js.map",
-    "revision": "4510690069c0b32616f7fbac91e1043a"
+    "revision": "bd44dc4763ac0550cc55cf30412555b7"
   }, {
     "url": "compatibility-testing.html",
     "revision": "cd62855f638056ea17f0db2acb88676f"
@@ -4137,10 +4137,10 @@ define("./service-worker.js",['./workbox-36e56ee0'], function (workbox) { 'use s
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "a1f812b872ee11cd35545d3d32d9c7ff"
+    "revision": "e7167c400ee3f389031dda9f0f0e49bc"
   }, {
     "url": "lib.min.js.map",
-    "revision": "55f6a6ff43a11f7a6c3f8856c55b25fc"
+    "revision": "1bcfa4e4e7ed342ea59e9baf1fce6347"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
