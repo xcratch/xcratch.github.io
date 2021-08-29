@@ -1,5 +1,5 @@
 diff --git a/src/lib/default-project/project-data.js b/src/lib/default-project/project-data.js
-index 9ee63b237..904485d5c 100644
+index 9ee63b237..7303cee95 100644
 --- a/src/lib/default-project/project-data.js
 +++ b/src/lib/default-project/project-data.js
 @@ -79,8 +79,8 @@ const projectData = translateFunction => {
@@ -24,3 +24,11 @@ index 9ee63b237..904485d5c 100644
                      }
                  ],
                  sounds: [
+@@ -116,6 +116,7 @@ const projectData = translateFunction => {
+         meta: {
+             semver: '3.0.0',
+             vm: '0.1.0',
++            origin: 'https://xcratch.github.io/editor',
+             agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36' // eslint-disable-line max-len
+         }
+     });
