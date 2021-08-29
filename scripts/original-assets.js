@@ -7,23 +7,26 @@ const GuiRoot = process.argv[2] ?
 
 let stdout;
 
-// Replace the default costumes.
-fs.copyFileSync(
-    path.resolve(__dirname, './original-assets/0fb9be3e8397c983338cb71dc84d0b25.svg'),
-    path.resolve(GuiRoot, './src/lib/default-project/0fb9be3e8397c983338cb71dc84d0b25.svg')
-);
-fs.copyFileSync(
-    path.resolve(__dirname, './original-assets/bcf454acf82e4504149f7ffe07081dbc.svg'),
-    path.resolve(GuiRoot, './src/lib/default-project/bcf454acf82e4504149f7ffe07081dbc.svg')
-);
+const projectData = fs.readFileSync(path.resolve(GuiRoot, 'src/lib/default-project/project-data.js'), 'utf-8');
+if (!projectData.includes('xcratch')) {
 
-// Fix project-data.
-try {
-    stdout = execSync(
-        `cd ${GuiRoot} && patch -p1 -N -s --no-backup-if-mismatch < ${path.resolve(__dirname, './original-assets/default-project.patch')}`
+    // Replace the default costumes.
+    fs.copyFileSync(
+        path.resolve(__dirname, './original-assets/0fb9be3e8397c983338cb71dc84d0b25.svg'),
+        path.resolve(GuiRoot, './src/lib/default-project/0fb9be3e8397c983338cb71dc84d0b25.svg')
     );
-    console.log(`stdout: ${stdout.toString()}`);
-} catch (err) {
-    // already applyed
-    console.error(err);
+    fs.copyFileSync(
+        path.resolve(__dirname, './original-assets/bcf454acf82e4504149f7ffe07081dbc.svg'),
+        path.resolve(GuiRoot, './src/lib/default-project/bcf454acf82e4504149f7ffe07081dbc.svg')
+    );
+
+    // Fix project-data.
+    try {
+        stdout = execSync(
+            `cd ${GuiRoot} && patch -p1 -N -s --no-backup-if-mismatch < ${path.resolve(__dirname, './original-assets/default-project.patch')}`
+        );
+        console.log(`stdout: ${stdout.toString()}`);
+    } catch (err) {
+        console.error(err);
+    }
 }
