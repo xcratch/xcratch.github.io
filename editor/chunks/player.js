@@ -98,31 +98,41 @@ if (false) {}
 
 
 
+var openEditor = function openEditor() {
+  var editorPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/player'));
+  window.open("".concat(window.location.protocol, "//").concat(window.location.host).concat(editorPath).concat(window.location.hash));
+}; // eslint-disable-next-line no-unused-vars
+
+
 var Player = function Player(_ref) {
   var isPlayerOnly = _ref.isPlayerOnly,
       onSeeInside = _ref.onSeeInside,
-      projectId = _ref.projectId;
+      projectId = _ref.projectId,
+      isFullScreen = _ref.isFullScreen;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_box_box_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(isPlayerOnly ? _player_css__WEBPACK_IMPORTED_MODULE_11___default.a.stageOnly : _player_css__WEBPACK_IMPORTED_MODULE_11___default.a.editor)
   }, isPlayerOnly && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-    onClick: onSeeInside
-  }, 'See inside'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onClick: openEditor
+  }, 'Open Editor'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
     canEditTitle: true,
     enableCommunity: true,
     isPlayerOnly: isPlayerOnly,
-    projectId: projectId
+    projectId: projectId,
+    isFullScreen: isFullScreen
   }));
 };
 
 Player.propTypes = {
   isPlayerOnly: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   onSeeInside: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  projectId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  projectId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  isFullScreen: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
 };
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    isPlayerOnly: state.scratchGui.mode.isPlayerOnly
+    isPlayerOnly: state.scratchGui.mode.isPlayerOnly,
+    isFullScreen: state.scratchGui.mode.isFullScreen
   };
 };
 
@@ -142,7 +152,8 @@ var WrappedPlayer = Object(redux__WEBPACK_IMPORTED_MODULE_5__["compose"])(_lib_a
 var appTarget = document.createElement('div');
 document.body.appendChild(appTarget);
 react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(WrappedPlayer, {
-  isPlayerOnly: true
+  isPlayerOnly: true,
+  isFullScreen: true
 }), appTarget);
 
 /***/ })
