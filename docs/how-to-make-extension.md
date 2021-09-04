@@ -1,7 +1,7 @@
 # How to Make Extension
 ## Scaffold Code
 
-`xcratch-create` is a Node executable script to download template code and replace properties with the arguments. The created files can be used as base of your own extension.
+`npx xcratch-create` (https://www.npmjs.com/package/xcratch-create) is a Node executable script to download template code and replace properties with the arguments. The created files can be used as base of your own extension.
 
 ```sh
 npx xcratch-create --repo=xcx-my-extension --account=githubAccount --extensionID=myExtension --extensionName='My Extension'
@@ -67,9 +67,9 @@ cd xcx-my-extension
 npm run register
 ```
 
-This script execute `npx xcratch-register` with appropriate arguments. The command copies source code or makes symbolic-link to the local Xcratch repository, and modifies the code of Xcratch to appear the extension in its extension selector.
+This script execute `npx xcratch-register` (https://www.npmjs.com/package/xcratch-register) with appropriate arguments. The command copies source code or makes symbolic-link to the local Xcratch repository, and modifies the code of Xcratch to appear the extension in its extension selector.
 
-`npx xcratch-register` accepts these command-line arguments.
+`xcratch-register` accepts these command-line arguments.
 
 - --base : base code to register in (optional, options: "LLK")
 - --link : use symbolic link instead of copy sources
@@ -100,9 +100,9 @@ Npm-script `build` bundles entry/block code and resources into one module file.
 npm run build
 ```
 
-This script execute `npx xcratch-build` with appropriate arguments. The command copies files to temporal directories in scratch-gui/scratch-vm and bundles them using [rollup.js](https://rollupjs.org/guide/en/).
+This script execute `npx xcratch-build` (https://www.npmjs.com/package/xcratch-build) with appropriate arguments. The command copies files to temporal directories in scratch-gui/scratch-vm and bundles them using [rollup.js](https://rollupjs.org/guide/en/).
 
-`npx xcratch-build` accepts these command-line arguments.
+`xcratch-build` accepts these command-line arguments.
 
 - --module: name of the module file (without '.mjs')
 - --block : location of block files from current dir (optional, default: "./src/block")

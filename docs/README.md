@@ -10,7 +10,7 @@ You can install and use user-made extensions from the web. Once you make a proje
 
 ### Built-in Web Bluetooth API
 
-You don't need to run [Scratch Link](https://scratch.mit.edu/microbit) to play with micro:bit or BLE devices when your browser is Chrome, Edge or 'Web Bluetooth API' supporting one (the browser in Chromebook, [‎Bluefy](https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055) in iPadOS, like that).
+You don't need to run [Scratch Link](https://scratch.mit.edu/microbit) to play with micro:bit or BLE devices when your browser is Chrome, Edge or 'Web Bluetooth API' supporting one (the browser in Chromebook, [‎Scrub](https://apps.apple.com/jp/app/scrub-web-browser/id1569777095) in iPad, like that).
 
 ### Can be Used Offline
 
