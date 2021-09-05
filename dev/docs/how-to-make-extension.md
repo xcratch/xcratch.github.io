@@ -1,11 +1,13 @@
 # How to Make Extension
 ## Scaffold Code
 
-`xcratch-create` is a Node executable script to download template code and replace properties with the arguments. The created files can be used as base of your own extension.
+`xcratch-create` (https://www.npmjs.com/package/xcratch-create) is a Node executable script to download template code and replace properties with the arguments. The created files can be used as base of your own extension.
 
 ```sh
 npx xcratch-create --repo=xcx-my-extension --account=githubAccount --extensionID=myExtension --extensionName='My Extension'
 ```
+
+`xcratch-create` accepts these command-line arguments.
 
 - --repo : Name of repository on GitHub
 - --account : Account on GitHub
@@ -42,7 +44,7 @@ You should use [ESLint](https://eslint.org/) with [LLK/eslint-config-scratch](ht
 npm install
 ```
 
-To develop your extension, you have to clone [xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) and [xcratch/scratch-vm#xcratch](https://github.com/xcratch/scratch-vm/tree/xcratch) on the same directory of your extension code.
+To develop your extension, you have to clone [xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) on the same directory of your extension code.
 Following configuration of directories is assumed for development. 
 
 ```
@@ -67,16 +69,16 @@ cd xcx-my-extension
 npm run register
 ```
 
-This script execute `npx xcratch-register` with appropriate arguments. The command copies source code or makes symbolic-link to the local Xcratch repository, and modifies the code of Xcratch to appear the extension in its extension selector.
+This script execute `npx xcratch-register` (https://www.npmjs.com/package/xcratch-register) with appropriate arguments. The command copies source code or makes symbolic-link to the local Xcratch repository, and modifies the code of Xcratch to appear the extension in its extension selector.
 
-`npx xcratch-register` accepts these command-line arguments.
+`xcratch-register` accepts these command-line arguments.
 
 - --base : base code to register in (optional, options: "LLK")
 - --link : use symbolic link instead of copy sources
 - --id : extensionID of this extension
-- --dir : directory name of the extension will be copied (optional, default: extensionID)
-- --gui : location of scratch-gui from current dir (optional, default: "../scratch-gui")
-- --vm : location of scratch-vm form current dir (optional, default: "gui/node_modules/scratch-vm")
+- --dir : directory name of the extension in Xcratch code (optional, default: extensionID)
+- --gui : location of scratch-gui (optional, default: "../scratch-gui")
+- --vm : location of scratch-vm (optional, default: "gui/node_modules/scratch-vm")
 - --url : URL to get this module as a loadable extension for Xcratch (optional)
 - -C : make the extension as a member of core-extensions
 
@@ -100,17 +102,17 @@ Npm-script `build` bundles entry/block code and resources into one module file.
 npm run build
 ```
 
-This script execute `npx xcratch-build` with appropriate arguments. The command copies files to temporal directories in scratch-gui/scratch-vm and bundles them using [rollup.js](https://rollupjs.org/guide/en/).
+This script execute `npx xcratch-build` (https://www.npmjs.com/package/xcratch-build) with appropriate arguments. The command copies files to temporal directories in scratch-gui/scratch-vm and bundles them using [rollup.js](https://rollupjs.org/guide/en/).
 
-`npx xcratch-build` accepts these command-line arguments.
+`xcratch-build` accepts these command-line arguments.
 
 - --module: name of the module file (without '.mjs')
-- --block : location of block files from current dir (optional, default: "./src/block")
-- --entry : location of entry files from current dir (optional, default: "./src/entry")
-- --gui : location of scratch-gui from current dir (optional, default: "../scratch-gui")
-- --vm : location of scratch-vm form current dir (optional, default: "gui/node_modules/scratch-vm")
+- --block : location of block files (optional, default: "./src/block")
+- --entry : location of entry files (optional, default: "./src/entry")
+- --gui : location of scratch-gui (optional, default: "../scratch-gui")
+- --vm : location of scratch-vm (optional, default: "gui/node_modules/scratch-vm")
 - --url : URL to get its module as a loadable extension for Xcratch (optional)
-- --output : location to save module form current dir (optional, default: "./dist")
+- --output : location to save module (optional, default: "./dist")
 
 
 To check the built module can be loadable into Xcratch, it must be fetched via Web. For example, setup [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) on your local repository then load the module on the public Xcratch editor like following.
@@ -118,7 +120,8 @@ To check the built module can be loadable into Xcratch, it must be fetched via W
 1. Open [Xcratch Editor](https://xcratch.github.io/editor)
 2. Click 'Add Extension' button
 3. Select 'Extension Loader' extension
-4. Type the module URL in the input field 
+4. Paste the module URL in the input field then press 'OK' button
+
 ```
 https://localhost:5500/dist/extensionID.mjs
 ```
