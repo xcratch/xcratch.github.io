@@ -1,7 +1,7 @@
-define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
     try {
-      self['workbox:core:6.2.4'] && _();
+      self['workbox:core:6.4.0'] && _();
     } catch (e) {}
 
     /*
@@ -42,7 +42,8 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
         warn: `#f39c12`,
         error: `#c0392b`,
         groupCollapsed: `#3498db`,
-        groupEnd: null
+        groupEnd: null // No colored prefix on groupEnd
+
       };
 
       const print = function (method, args) {
@@ -502,7 +503,7 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
     };
 
     try {
-      self['workbox:routing:6.2.4'] && _();
+      self['workbox:routing:6.4.0'] && _();
     } catch (e) {}
 
     /*
@@ -825,11 +826,12 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
         // See https://github.com/Microsoft/TypeScript/issues/28357#issuecomment-436484705
         self.addEventListener('message', event => {
           // event.data is type 'any'
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           if (event.data && event.data.type === 'CACHE_URLS') {
-            // eslint-disable-line
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             const {
               payload
-            } = event.data; // eslint-disable-line
+            } = event.data;
 
             {
               logger.debug(`Caching URLs from the window`, payload.urlsToCache);
@@ -1388,7 +1390,7 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
     }
 
     try {
-      self['workbox:precaching:6.2.4'] && _();
+      self['workbox:precaching:6.4.0'] && _();
     } catch (e) {}
 
     /*
@@ -1891,7 +1893,7 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
     }
 
     try {
-      self['workbox:strategies:6.2.4'] && _();
+      self['workbox:strategies:6.4.0'] && _();
     } catch (e) {}
 
     /*
@@ -2276,7 +2278,9 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
 
 
       async getCacheKey(request, mode) {
-        if (!this._cacheKeys[mode]) {
+        const key = `${request.url} | ${mode}`;
+
+        if (!this._cacheKeys[key]) {
           let effectiveRequest = request;
 
           for (const callback of this.iterateCallbacks('cacheKeyWillBeUsed')) {
@@ -2285,14 +2289,15 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
               request: effectiveRequest,
               event: this.event,
               // params has a type any can't change right now.
-              params: this.params
+              params: this.params // eslint-disable-line
+
             }));
           }
 
-          this._cacheKeys[mode] = effectiveRequest;
+          this._cacheKeys[key] = effectiveRequest;
         }
 
-        return this._cacheKeys[mode];
+        return this._cacheKeys[key];
       }
       /**
        * Returns true if the strategy has at least one plugin with the given
@@ -3551,4 +3556,4 @@ define("./workbox-718aa5be.js",['exports'], (function (exports) { 'use strict';
     exports.precacheAndRoute = precacheAndRoute;
 
 }));
-//# sourceMappingURL=workbox-718aa5be.js.map
+//# sourceMappingURL=workbox-bf399525.js.map
