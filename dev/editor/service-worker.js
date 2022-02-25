@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-bf399525'], (function (workbox) { 'use strict';
+define(['./workbox-2afe96ff'], (function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -4123,10 +4123,10 @@ define(['./workbox-bf399525'], (function (workbox) { 'use strict';
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "7caee8a92c60a94a805ff8f3a4fed78b"
+    "revision": "cd0236d9c56732ba882d8f19769fc9b7"
   }, {
     "url": "lib.min.js.map",
-    "revision": "7d540d025779d014d3144f6b6ec19b79"
+    "revision": "829d0828abac989e9ba5ea8807ea6061"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
@@ -4553,6 +4553,9 @@ define(['./workbox-bf399525'], (function (workbox) { 'use strict';
   }, {
     "url": "static/assets/af2202211ca1873edb949012dab6f9d1.svg",
     "revision": "af2202211ca1873edb949012dab6f9d1"
+  }, {
+    "url": "static/assets/b1ccb1d911886b973398e4c4d1a6bb91.png",
+    "revision": "b1ccb1d911886b973398e4c4d1a6bb91"
   }, {
     "url": "static/assets/b2c44c738c9cbc1a99cd6edfd0c2b85b.svg",
     "revision": "b2c44c738c9cbc1a99cd6edfd0c2b85b"
