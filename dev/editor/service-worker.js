@@ -112,10 +112,10 @@ define(['./workbox-2afe96ff'], (function (workbox) { 'use strict';
     "revision": "8f44a83bc2884a3b22bf5cef34606bfb"
   }, {
     "url": "chunks/gui.js",
-    "revision": "9202361a7dbe71d3a7709a8bcb426cc1"
+    "revision": "97890331a189a9f71322c6f67c380e9b"
   }, {
     "url": "chunks/gui.js.map",
-    "revision": "fd8155f8a365d1f04085ea034ec6da87"
+    "revision": "92b5a3353c4442bcb0c0907261787f59"
   }, {
     "url": "chunks/player.js",
     "revision": "90a5d5f3983a78552181a78aa0e74ff0"
@@ -4123,10 +4123,10 @@ define(['./workbox-2afe96ff'], (function (workbox) { 'use strict';
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "cd0236d9c56732ba882d8f19769fc9b7"
+    "revision": "8500e65ed8e8e6185376a149ad501e7c"
   }, {
     "url": "lib.min.js.map",
-    "revision": "829d0828abac989e9ba5ea8807ea6061"
+    "revision": "d9e571465e421b91496e6891c2b10b52"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
