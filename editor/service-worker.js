@@ -13,75 +13,61 @@
 
 // If the loader is already loaded, just stop.
 if (!self.define) {
-  const singleRequire = name => {
-    if (name !== 'require') {
-      name = name + '.js';
-    }
-    let promise = Promise.resolve();
-    if (!registry[name]) {
+  let registry = {};
+
+  // Used for `eval` and `importScripts` where we can't get script URL by other means.
+  // In both cases, it's safe to use a global var because those functions are synchronous.
+  let nextDefineUri;
+
+  const singleRequire = (uri, parentUri) => {
+    uri = new URL(uri + ".js", parentUri).href;
+    return registry[uri] || (
       
-        promise = new Promise(async resolve => {
+        new Promise(resolve => {
           if ("document" in self) {
             const script = document.createElement("script");
-            script.src = name;
-            document.head.appendChild(script);
+            script.src = uri;
             script.onload = resolve;
+            document.head.appendChild(script);
           } else {
-            importScripts(name);
+            nextDefineUri = uri;
+            importScripts(uri);
             resolve();
           }
-        });
+        })
       
-    }
-    return promise.then(() => {
-      if (!registry[name]) {
-        throw new Error(`Module ${name} didn’t register its module`);
-      }
-      return registry[name];
-    });
+      .then(() => {
+        let promise = registry[uri];
+        if (!promise) {
+          throw new Error(`Module ${uri} didn’t register its module`);
+        }
+        return promise;
+      })
+    );
   };
 
-  const require = (names, resolve) => {
-    Promise.all(names.map(singleRequire))
-      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
-  };
-  
-  const registry = {
-    require: Promise.resolve(require)
-  };
-
-  self.define = (moduleName, depsNames, factory) => {
-    if (registry[moduleName]) {
+  self.define = (depsNames, factory) => {
+    const uri = nextDefineUri || ("document" in self ? document.currentScript.src : "") || location.href;
+    if (registry[uri]) {
       // Module is already loading or loaded.
       return;
     }
-    registry[moduleName] = Promise.resolve().then(() => {
-      let exports = {};
-      const module = {
-        uri: location.origin + moduleName.slice(1)
-      };
-      return Promise.all(
-        depsNames.map(depName => {
-          switch(depName) {
-            case "exports":
-              return exports;
-            case "module":
-              return module;
-            default:
-              return singleRequire(depName);
-          }
-        })
-      ).then(deps => {
-        const facValue = factory(...deps);
-        if(!exports.default) {
-          exports.default = facValue;
-        }
-        return exports;
-      });
+    let exports = {};
+    const require = depUri => singleRequire(depUri, uri);
+    const specialDeps = {
+      module: { uri },
+      exports,
+      require
+    };
+    registry[uri] = Promise.all(depsNames.map(
+      depName => specialDeps[depName] || require(depName)
+    )).then(deps => {
+      factory(...deps);
+      return exports;
     });
   };
 }
-define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use strict';
+define(['./workbox-2afe96ff'], (function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -126,10 +112,10 @@ define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use s
     "revision": "8f44a83bc2884a3b22bf5cef34606bfb"
   }, {
     "url": "chunks/gui.js",
-    "revision": "9202361a7dbe71d3a7709a8bcb426cc1"
+    "revision": "97890331a189a9f71322c6f67c380e9b"
   }, {
     "url": "chunks/gui.js.map",
-    "revision": "fd8155f8a365d1f04085ea034ec6da87"
+    "revision": "92b5a3353c4442bcb0c0907261787f59"
   }, {
     "url": "chunks/player.js",
     "revision": "90a5d5f3983a78552181a78aa0e74ff0"
@@ -4137,10 +4123,10 @@ define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use s
     "revision": "b74aae026e67dcab8799dd2e9e1e7da7"
   }, {
     "url": "lib.min.js",
-    "revision": "90d541f6dc2c78b6002718cff13de019"
+    "revision": "8500e65ed8e8e6185376a149ad501e7c"
   }, {
     "url": "lib.min.js.map",
-    "revision": "c1e111e886e0b7f5505d4431f0d9431e"
+    "revision": "d9e571465e421b91496e6891c2b10b52"
   }, {
     "url": "player.html",
     "revision": "587ff557c6a4c09eaf9e183d5c74cbe7"
@@ -4568,6 +4554,9 @@ define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use s
     "url": "static/assets/af2202211ca1873edb949012dab6f9d1.svg",
     "revision": "af2202211ca1873edb949012dab6f9d1"
   }, {
+    "url": "static/assets/b1ccb1d911886b973398e4c4d1a6bb91.png",
+    "revision": "b1ccb1d911886b973398e4c4d1a6bb91"
+  }, {
     "url": "static/assets/b2c44c738c9cbc1a99cd6edfd0c2b85b.svg",
     "revision": "b2c44c738c9cbc1a99cd6edfd0c2b85b"
   }, {
@@ -4971,5 +4960,5 @@ define("./service-worker.js",['./workbox-9cb17bc4'], function (workbox) { 'use s
     "revision": "578e75dc4330002a3bebd8dcf12836aa"
   }], {});
 
-});
+}));
 //# sourceMappingURL=service-worker.js.map

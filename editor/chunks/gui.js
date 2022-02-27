@@ -13,7 +13,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html,\nbody,\n.index_app_3Qs6X {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n", ""]);
+exports.push([module.i, "html,\nbody,\n.index_app_3Qs6X {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n\n/* Show whole shape of blocks when mouse over on the pallet. */\n\n.blocklyFlyout:hover {\n    overflow: visible;\n}\n\n.blocklyFlyout:hover .blocklyWorkspace {\n  -webkit-clip-path: none;\n          clip-path: none;\n}\n\n.blocklyScrollbarBackground:hover {\n  opacity: 0.05;\n}\n\n.blocklyFlyoutScrollbar {\n    margin-left: 4px;\n}\n", ""]);
 
 // exports
 exports.locals = {
