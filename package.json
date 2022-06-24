@@ -1,8 +1,7 @@
 {
-  "name": "xcratch",
-  "version": "1.0.0",
-  "description": "Extendable Scratch3 Programming Environment",
-  "main": "scripts/setup-local.js",
+  "name": "xcratch.github.io",
+  "version": "0.3.1",
+  "description": "Site of Xcratch",
   "scripts": {
     "setup:local": "node ./scripts/replace-logo.js \"../scratch-gui\" && node ./scripts/original-assets.js \"../scratch-gui\"",
     "start:local": "cd ../scratch-gui && npm run start -- --https",
@@ -21,9 +20,5 @@
   "bugs": {
     "url": "https://github.com/xcratch/xcratch.github.io/issues"
   },
-  "homepage": "https://github.com/xcratch/xcratch.github.io#readme",
-  "devDependencies": {
-    "eslint": "^7.9.0"
-  },
-  "dependencies": {}
+  "homepage": "https://xcratch.github.io"
 }
