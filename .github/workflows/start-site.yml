@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: xcratch/scratch-gui
-          ref: xcratch
+          ref: xcratch-0.3.1
           path: ./scratch-gui
       - run: npm install
         working-directory: ./scratch-gui
