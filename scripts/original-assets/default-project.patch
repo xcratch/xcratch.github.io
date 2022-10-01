@@ -1,26 +1,65 @@
+diff --git a/src/lib/default-project/index.js b/src/lib/default-project/index.js
+index 6e733f705..e99c89b26 100644
+--- a/src/lib/default-project/index.js
++++ b/src/lib/default-project/index.js
+@@ -4,8 +4,8 @@ import projectData from './project-data';
+ import popWav from '!arraybuffer-loader!./83a9787d4cb6f3b7632b4ddfebf74367.wav';
+ import meowWav from '!arraybuffer-loader!./83c36d806dc92327b9e7049a565c6bff.wav';
+ import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg';
+-import costume1 from '!raw-loader!./bcf454acf82e4504149f7ffe07081dbc.svg';
+-import costume2 from '!raw-loader!./0fb9be3e8397c983338cb71dc84d0b25.svg';
++import costume1 from '!raw-loader!./881c5994e99006fc05359d738af66337.svg';
++import costume2 from '!raw-loader!./b6e71f1bf154c8a5470665fe87dd507c.svg';
+ /* eslint-enable import/no-unresolved */
+ 
+ const defaultProject = translator => {
+@@ -40,12 +40,12 @@ const defaultProject = translator => {
+         dataFormat: 'SVG',
+         data: encoder.encode(backdrop)
+     }, {
+-        id: 'bcf454acf82e4504149f7ffe07081dbc',
++        id: '881c5994e99006fc05359d738af66337',
+         assetType: 'ImageVector',
+         dataFormat: 'SVG',
+         data: encoder.encode(costume1)
+     }, {
+-        id: '0fb9be3e8397c983338cb71dc84d0b25',
++        id: 'b6e71f1bf154c8a5470665fe87dd507c',
+         assetType: 'ImageVector',
+         dataFormat: 'SVG',
+         data: encoder.encode(costume2)
 diff --git a/src/lib/default-project/project-data.js b/src/lib/default-project/project-data.js
-index 9ee63b237..7303cee95 100644
+index 9ee63b237..83f06d31f 100644
 --- a/src/lib/default-project/project-data.js
 +++ b/src/lib/default-project/project-data.js
-@@ -79,8 +79,8 @@ const projectData = translateFunction => {
+@@ -74,22 +74,22 @@ const projectData = translateFunction => {
+                 currentCostume: 0,
+                 costumes: [
+                     {
+-                        assetId: 'bcf454acf82e4504149f7ffe07081dbc',
++                        assetId: '881c5994e99006fc05359d738af66337',
+                         name: translator(messages.costume, {index: 1}),
                          bitmapResolution: 1,
-                         md5ext: 'bcf454acf82e4504149f7ffe07081dbc.svg',
+-                        md5ext: 'bcf454acf82e4504149f7ffe07081dbc.svg',
++                        md5ext: '881c5994e99006fc05359d738af66337.svg',
                          dataFormat: 'svg',
 -                        rotationCenterX: 48,
 -                        rotationCenterY: 50
-+                        rotationCenterX: 72.5,
-+                        rotationCenterY: 27.5
++                        rotationCenterX: 65.85918426513672,
++                        rotationCenterY: 24.999961853027344
                      },
                      {
-                         assetId: '0fb9be3e8397c983338cb71dc84d0b25',
-@@ -88,8 +88,8 @@ const projectData = translateFunction => {
+-                        assetId: '0fb9be3e8397c983338cb71dc84d0b25',
++                        assetId: 'b6e71f1bf154c8a5470665fe87dd507c',
+                         name: translator(messages.costume, {index: 2}),
                          bitmapResolution: 1,
-                         md5ext: '0fb9be3e8397c983338cb71dc84d0b25.svg',
+-                        md5ext: '0fb9be3e8397c983338cb71dc84d0b25.svg',
++                        md5ext: 'b6e71f1bf154c8a5470665fe87dd507c.svg',
                          dataFormat: 'svg',
 -                        rotationCenterX: 46,
 -                        rotationCenterY: 53
-+                        rotationCenterX: 72.5,
-+                        rotationCenterY: 27.5
++                        rotationCenterX: 65.85923767089844,
++                        rotationCenterY: 24.999961853027344
                      }
                  ],
                  sounds: [

@@ -12,12 +12,12 @@ if (!projectData.includes('xcratch')) {
 
     // Replace the default costumes.
     fs.copyFileSync(
-        path.resolve(__dirname, './original-assets/0fb9be3e8397c983338cb71dc84d0b25.svg'),
-        path.resolve(GuiRoot, './src/lib/default-project/0fb9be3e8397c983338cb71dc84d0b25.svg')
+        path.resolve(__dirname, './original-assets/881c5994e99006fc05359d738af66337.svg'),
+        path.resolve(GuiRoot, './src/lib/default-project/881c5994e99006fc05359d738af66337.svg')
     );
     fs.copyFileSync(
-        path.resolve(__dirname, './original-assets/bcf454acf82e4504149f7ffe07081dbc.svg'),
-        path.resolve(GuiRoot, './src/lib/default-project/bcf454acf82e4504149f7ffe07081dbc.svg')
+        path.resolve(__dirname, './original-assets/b6e71f1bf154c8a5470665fe87dd507c.svg'),
+        path.resolve(GuiRoot, './src/lib/default-project/b6e71f1bf154c8a5470665fe87dd507c.svg')
     );
 
     // Fix project-data.
