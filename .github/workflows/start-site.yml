@@ -1,47 +1,63 @@
 name: Start Site
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Manual Start Site'
-        # Default value if no value is explicitly provided
-        default: ''
-        # Input has to be provided for the workflow to run
-        required: false
+      branch:
+        description: "Branch of Xcratch"
+        default: "xcratch-dev"
+        required: true
+      dev:
+        description: "Publish for development"
+        type: boolean
+        default: true
+        required: true
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Inputs
+        run: echo "${{ toJSON(inputs) }}"
+      - name: checkout scratch-gui
+        uses: actions/checkout@v3
         with:
           repository: xcratch/scratch-gui
-          ref: xcratch-0.3.1
+          ref: ${{ inputs.branch }}
           path: ./scratch-gui
       - run: npm install
         working-directory: ./scratch-gui
-      - uses: actions/checkout@v2
+      - name: checkout xcratch.github.io
+        uses: actions/checkout@v3
         with:
           repository: xcratch/xcratch.github.io
-          ref: main
           path: ./xcratch.github.io
       - run: node ./scripts/replace-logo.js ../scratch-gui
         working-directory: ./xcratch.github.io
       - run: node ./scripts/original-assets.js ../scratch-gui
         working-directory: ./xcratch.github.io
-      - run: npm run build
+      - name: build scratch-gui
+        run: npm run build
         working-directory: ./scratch-gui
       - run: cp ./xcratch.github.io/editor/favicon.ico ./scratch-gui/build/static/favicon.ico
       - run: mv -T ./xcratch.github.io/public ./public
       - run: mv -T ./scratch-gui/build ./public/editor
-      - uses: actions/checkout@v2
+      - name: checkout xcratch-doc
+        uses: actions/checkout@v3
         with:
           repository: xcratch/xcratch-doc
           path: ./xcratch-doc
       - run: mv -T ./xcratch-doc/docs ./public/docs
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: publish for dev
+        if: ${{ inputs.dev }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: ./dev
+          keep_files: false
+      - name: publish
+        if: ${{ !inputs.dev }}
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
