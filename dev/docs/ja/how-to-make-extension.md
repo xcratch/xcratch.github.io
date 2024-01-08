@@ -1,7 +1,36 @@
 # How to Make Extension
-## 足場のコード
 
-`xcratch-create` (https://www.npmjs.com/package/xcratch-create) は、テンプレートコードをダウンロードして、プロパティを引数に置き換えるNodeの実行可能スクリプトです。作成されたファイルは、あなたの拡張機能のベースとして使用することができます。
+## 開発環境のセットアップ
+### Xcratch開発サーバーのセットアップ
+
+拡張機能を開発するためには、あらかじめ [xcratch/scratch-vm#xcratch](https://github.com/xcratch/scratch-vm/tree/xcratch) と [xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) を拡張機能のコードと同じディレクトリにクローンする必要があります。
+開発時には以下のようなディレクトリ構成を想定しています。
+
+```
+.
+├── scratch-vm
+├── scratch-gui
+└── xcx-my-extension
+```
+
+次のコマンドで、scratch-vmとscratch-guiをクローンして、開発に必要なパッケージをインストールします。
+最後のコマンドで、xcratch/scratch-gui自体の開発環境をセットアップしています。
+
+```sh
+git clone -b xcratch https://github.com/xcratch/scratch-vm.git
+cd ./scratch-vm
+npm install
+cd ../
+git clone -b xcratch https://github.com/xcratch/scratch-gui.git
+cd ./scratch-gui
+npm install
+npm run setup-dev
+```
+
+### 足場のコードの生成
+
+Xcratchの拡張機能を新しく作成するには、[xcratch-create](https://www.npmjs.com/package/xcratch-create) を使って足場になるコードを生成します。
+xcratch-create は、テンプレートコードをダウンロードして、プロパティを引数に置き換えるNodeの実行可能スクリプトです。ローカルに作成されたファイルは、新しい拡張機能のベースとして使用することができます。
 
 ```sh
 npx xcratch-create --repo=xcx-my-extension --account=githubAccount --extensionID=myExtension --extensionName='My Extension'
@@ -15,7 +44,7 @@ npx xcratch-create --repo=xcx-my-extension --account=githubAccount --extensionID
 - --extensionName : Xcratchでの拡張機能の名前
 
 
-## 環境設定
+### ローカルリポジトリのセットアップ
 
 このコードは[GitHub](https://github.com/)で公開する想定になっています。
 
@@ -34,89 +63,46 @@ Then commit and push all files like this.
 
 ```sh
 git add .
-git commit -m "First commit"
+git commit -m "Scaffold code"
 git push -u origin main
 ```
 
-[ESLint](https://eslint.org/) で [LLK/eslint-config-scratch](https://github.com/LLK/eslint-config-scratch#readme) を使う必要があるので、依存パッケージをインストールしてください。
+次にNode.jsの依存パッケージをインストールします。
 
 ```sh
 npm install
 ```
 
-拡張機能を開発するためには、[xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) を、拡張機能のコードと同じディレクトリにクローンする必要があります。
-開発時には以下のようなディレクトリ構成を想定しています。
-
-```
-.
-├── scratch-gui
-└── xcx-my-extension
-```
+次のコマンドで、開発に必要な scratch-vm のフォルダへの参照リンクを作成します。
 
 ```sh
-git clone -b xcratch https://github.com/xcratch/scratch-gui.git
-cd ./scratch-gui
-npm install
+npm run setup-dev
 ```
 
+### モジュールファイルのビルド
 
-## ローカル Xcratch への登録
-
-拡張機能をテスト、デバッグするには、Xcratchに登録する必要があります。Npm-script `register` は、ローカルのXcratchエディタに拡張機能を追加します。
-
-```sh
-cd xcx-my-extension
-npm run register
-```
-
-このスクリプトは、`npx xcratch-register` (https://www.npmjs.com/package/xcratch-register) を適切な引数で実行します。このコマンドは、ローカルのXcratchリポジトリにソースコードをコピーするか、シンボリックリンクを作成し、Xcratchのコードを変更して、その拡張機能選択画面に拡張機能を表示します。
-
-`xcratch-register` は以下のコマンドライン引数を受け付けます。
-
-- --base : 登録するベースコード (オプション, オプション: "LLK")
-- --link : コピーの代わりにシンボリックリンクを使う
-- --id : この拡張機能の extensionID
-- --dir : Xcratchコード内の拡張機能のディレクトリ名 (オプション、デフォルト: extensionID)
-- --gui : scratch-gui の場所 (オプション、デフォルト: "../scratch-gui")
-- --vm : scratch-vm の場所 (オプション、デフォルト: "gui/node_modules/scratch-vm")
-- --url : このモジュールをXcratchのロード可能な拡張機能として取得するためのURL(オプション)
-- -C : 拡張機能をcore-extensionsのメンバーにする
-
-何らかの理由でXcratchを使用できなかった場合は、`--base=LLK` によって通常の "LLK/scratch-gui "に拡張機能を登録することができます。
-
-拡張機能の登録が完了したら、scratch-guiのdev-serverを起動し、ブラウザの開発ツールを使ってデバッグを行います。
-
-```sh
-cd ../scratch-gui
-npm run start -- --https
-```
-
-ウェブブラウザで https://localhost:8601 を開き、Xcratch エディターに拡張機能が登録されていることを確認します。
-
-## モジュールの構築
-
-Npm-script `build` は、エントリーやブロックのコードとリソースを1つのモジュールファイルにまとめます。
+拡張機能を利用なモジュールファイルにビルドするには、[rollup.js](https://rollupjs.org/guide/en/) を使います。
+次のコマンドで、rollup.jsによって必要なソースコードを一つにまとめたモジュールファイルがつくられます。
 
 ```sh
 npm run build
 ```
 
-このスクリプトは、`npx xcratch-build`(https://www.npmjs.com/package/xcratch-build) を適切な引数で実行します。このコマンドは、ファイルをscratch-gui/scratch-vm内の一時的なディレクトリにコピーし、[rollup.js](https://rollupjs.org/guide/en/)を使ってそれらを束ねます。
+ビルドされたモジュールは、`dist/extensionID.mjs` に保存されます。
 
-`xcratch-build` は以下のコマンドライン引数を受け付けます。
+ソースコードの変更に応じてビルドを自動的に行うには、`npm run watch` を実行します。
 
-- --module : モジュールファイルの名前 (ただし、「.mjs」は除く)
-- --block : ブロックファイルの場所(オプション、デフォルト: "./src/block")
-- --entry : エントリーファイルの場所(オプション、デフォルト: "./src/entry")
-- --gui : scratch-gui の場所（オプション、デフォルト："../scratch-gui"）。
-- --vm : scratch-vm の場所（オプション、デフォルト：「gui/node_modules/scratch-vm」）。
-- --url : Xcratchのロード可能な拡張機能としてそのモジュールを取得するためのURL（オプション)
-- --output : モジュールを保存する場所 (オプション、デフォルト: "./dist")
+```sh
+npm run watch
+```
 
+### モジュールファイルをWebサーバーで取得
 
-ビルドされたモジュールがXcratchにロード可能かどうかを確認するためには、Web経由でモジュールを取得する必要があります。例えば、ローカルリポジトリに[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)をセットアップし、公開されているXcratchエディタに以下のようにモジュールをロードします。
+ビルドされたモジュールをデバッグするためには、Webサーバー経由でモジュールを取得する必要があります。
 
-1. [Xcratch Editor](https://xcratch.github.io/editor) を開きます。
+例えば、ローカルリポジトリに[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)をセットアップし、Xcratchエディタで以下のようにモジュールをロードします。(URLのポート番号やパスは、Live Serverの設定によって異なります)
+
+1. Xcratch Editor を開きます。
 2. 「拡張機能を追加」ボタンをクリックします。
 3. 「拡張機能を読み込む」エクステンションを選択します。
 4. 入力フィールドに以下のモジュールのURLを入力し、「OK」ボタンを押します。
@@ -125,7 +111,23 @@ npm run build
 https://localhost:5500/dist/extensionID.mjs
 ```
 
-## モジュールの配置
+### Xcratch開発サーバーによるデバッグ
+
+xcratch/scratch-guiの開発環境をセットアップすると、`npm run start` で開発用サーバーを起動できます。
+httpsサーバーが必要な場合は、`--https` オプションを付けて起動します。このためには、 [mkcert](https://github.com/FiloSottile/mkcert) などでローカルに証明書を用意する必要があります。
+
+```sh
+npm run start -- --https
+```
+
+[Visual Studio Code](https://code.visualstudio.com/) を使うと、```scratch-gui/.vscodde/launch.json``` の "debug on dev-server" を使って、開発用サーバーをデバッグすることができます。
+この開発用サーバーで拡張機能のモジュールを読み込むと、Visual Studio Code のデバッグ機能により、拡張機能のソースコードにブレークポイントを設定してデバッグすることができます。
+
+----
+
+## 拡張機能の配布
+
+### GitHub Pages への配置
 
 拡張モジュールファイルのデプロイには、[GitHub Pages](https://pages.github.com/) を利用することができます。
 
@@ -136,11 +138,11 @@ GitHub Pageでモジュールを公開するには、[GitHub Docs](https://docs.
 拡張モジュールを別のサーバで公開したい場合は、そのサーバが `https://xcratch.github.io/` から [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) を受け入れているかどうかを確認してください。サーバーでCORSが有効になっていない場合、Xcratchはモジュールをインポートできません。
 
 
-## 例を示す
+### 例を示す
 
 Xcratchは、URLからプロジェクトを開き、extension-URLを入力することなく、プロジェクトで使用されているすべての拡張機能を自動的にロードすることができます。
 
-あなたの拡張機能の少なくとも1つのブロックを使用してサンプルプロジェクトを作成し、`projects/example.sb3` として保存すれば、このプロジェクトは、Xcratchで以下のようなURLで開くことができます。
+新しくつくった拡張機能の少なくとも1つのブロックを使用してサンプルプロジェクトを作成し、`projects/example.sb3` として保存すれば、このプロジェクトは、Xcratchで以下のようなURLで開くことができます。
 
 ```
 https://xcratch.github.io/editor/#https://<account>.github.io/<repository>/projects/example.sb3

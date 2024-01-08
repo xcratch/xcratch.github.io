@@ -1,30 +1,56 @@
 # How to Make Extension
-## Scaffold Code
 
-`xcratch-create` (https://www.npmjs.com/package/xcratch-create) is a Node executable script to download template code and replace properties with the arguments. The created files can be used as base of your own extension.
+## Setting Up the Development Environment
+### Setting Up the Xcratch Development Server
+
+To develop an extension, you need to clone [xcratch/scratch-vm#xcratch](https://github.com/xcratch/scratch-vm/tree/xcratch) and [xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) into the same directory as your extension code. The directory structure is expected to be as follows during development:
+
+```
+.
+├── scratch-vm
+├── scratch-gui
+└── xcx-my-extension
+```
+
+Use the following commands to clone scratch-vm and scratch-gui, and install the necessary packages for development. The last command sets up the development environment for xcratch/scratch-gui itself.
+
+```sh
+git clone -b xcratch https://github.com/xcratch/scratch-vm.git
+cd ./scratch-vm
+npm install
+cd ../
+git clone -b xcratch https://github.com/xcratch/scratch-gui.git
+cd ./scratch-gui
+npm install
+npm run setup-dev
+```
+
+### Generating Scaffold Code
+
+To create a new extension for Xcratch, use [xcratch-create](https://www.npmjs.com/package/xcratch-create) to generate the scaffold code. xcratch-create is a Node executable script that downloads template code and replaces properties with arguments. The files created locally can be used as the base for the new extension.
 
 ```sh
 npx xcratch-create --repo=xcx-my-extension --account=githubAccount --extensionID=myExtension --extensionName='My Extension'
 ```
 
-`xcratch-create` accepts these command-line arguments.
+`xcratch-create` accepts the following command-line arguments:
 
-- --repo : Name of repository on GitHub
+- --repo : Name of the repository on GitHub
 - --account : Account on GitHub
 - --extensionID : ID of the extension in Xcratch
 - --extensionName : Name of the extension in Xcratch
 
 
-## Setup Environment
+### Setting Up the Local Repository
 
-The code is supposed to be published on [GitHub](https://github.com/).
+This code is intended to be published on [GitHub](https://github.com/).
 
 ```sh
 cd xcx-my-extension
 git init -b main
 ```
 
-You will [creating a new repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository) on GitHub and add the repo as a remote of the local repository.
+Create a [new repository on GitHub](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-new-repository), and add that repository as a remote for your local repository.
 
 ```sh
 git remote add origin <REPO_URL>
@@ -34,120 +60,89 @@ Then commit and push all files like this.
 
 ```sh
 git add .
-git commit -m "First commit"
+git commit -m "Scaffold code"
 git push -u origin main
 ```
 
-You should use [ESLint](https://eslint.org/) with [LLK/eslint-config-scratch](https://github.com/LLK/eslint-config-scratch#readme), so you need to install the depending packages.
+Next, install the Node.js dependency packages.
 
 ```sh
 npm install
 ```
 
-To develop your extension, you have to clone [xcratch/scratch-gui#xcratch](https://github.com/xcratch/scratch-gui/tree/xcratch) on the same directory of your extension code.
-Following configuration of directories is assumed for development. 
-
-```
-.
-├── scratch-gui
-└── xcx-my-extension
-```
+Use the following command to create a reference link to the scratch-vm folder needed for development.
 
 ```sh
-git clone -b xcratch https://github.com/xcratch/scratch-gui.git
-cd ./scratch-gui
-npm install
+npm run setup-dev
 ```
 
+### Building Module Files
 
-## Register in a Local Xcratch
-
-To test and debug your extension, you should register it in Xcratch. Npm-script `register` adds an extension in a local Xcratch editor.
-
-```sh
-cd xcx-my-extension
-npm run register
-```
-
-This script execute `npx xcratch-register` (https://www.npmjs.com/package/xcratch-register) with appropriate arguments. The command copies source code or makes symbolic-link to the local Xcratch repository, and modifies the code of Xcratch to appear the extension in its extension selector.
-
-`xcratch-register` accepts these command-line arguments.
-
-- --base : base code to register in (optional, options: "LLK")
-- --link : use symbolic link instead of copy sources
-- --id : extensionID of this extension
-- --dir : directory name of the extension in Xcratch code (optional, default: extensionID)
-- --gui : location of scratch-gui (optional, default: "../scratch-gui")
-- --vm : location of scratch-vm (optional, default: "gui/node_modules/scratch-vm")
-- --url : URL to get this module as a loadable extension for Xcratch (optional)
-- -C : make the extension as a member of core-extensions
-
-When you could not use Xcratch with some reason, you can register your extension to the normal "LLK/scratch-gui" with `--base=LLK`.
-
-After your extension is registered, start dev-server of scratch-gui and debug using browser's dev-tools.
-
-```sh
-cd ../scratch-gui
-npm run start -- --https
-```
-
-Open https://localhost:8601 with a web browser to check the extension is registered in the Xcratch editor.
-
-
-## Module Building
-
-Npm-script `build` bundles entry/block code and resources into one module file.
+To build the extension into a module file that can be used, use [rollup.js](https://rollupjs.org/guide/en/). The following command creates a module file that combines the necessary source code into one using rollup.js.
 
 ```sh
 npm run build
 ```
 
-This script execute `npx xcratch-build` (https://www.npmjs.com/package/xcratch-build) with appropriate arguments. The command copies files to temporal directories in scratch-gui/scratch-vm and bundles them using [rollup.js](https://rollupjs.org/guide/en/).
+The built module is saved in `dist/extensionID.mjs`.
 
-`xcratch-build` accepts these command-line arguments.
+To automatically build according to changes in the source code, execute `npm run watch`.
 
-- --module: name of the module file (without '.mjs')
-- --block : location of block files (optional, default: "./src/block")
-- --entry : location of entry files (optional, default: "./src/entry")
-- --gui : location of scratch-gui (optional, default: "../scratch-gui")
-- --vm : location of scratch-vm (optional, default: "gui/node_modules/scratch-vm")
-- --url : URL to get its module as a loadable extension for Xcratch (optional)
-- --output : location to save module (optional, default: "./dist")
+```sh
+npm run watch
+```
 
+### Retrieving Module Files via a Web Server
 
-To check the built module can be loadable into Xcratch, it must be fetched via Web. For example, setup [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) on your local repository then load the module on the public Xcratch editor like following.
+To debug the built module, you need to retrieve the module via a web server.
 
-1. Open [Xcratch Editor](https://xcratch.github.io/editor)
-2. Click 'Add Extension' button
-3. Select 'Extension Loader' extension
-4. Paste the module URL in the input field then press 'OK' button
+For example, set up [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in your local repository and load the module in the Xcratch editor as follows. (The port number and path of the URL will vary depending on the settings of Live Server)
+
+1. Open the Xcratch Editor.
+2. Click the "Add Extension" button.
+3. Select the "Load Extension" extension.
+4. Enter the URL of the module in the input field and press the "OK" button.
 
 ```
 https://localhost:5500/dist/extensionID.mjs
 ```
 
-## Module Deployment
+### Debugging with the Xcratch Development Server
 
-You can use [GitHub Pages](https://pages.github.com/) to deploy your extension module file.
+When you set up the development environment for xcratch/scratch-gui, you can start the development server with `npm run start`. If you need an https server, start with the `--https` option. For this, you need to prepare a certificate locally with [mkcert](https://github.com/FiloSottile/mkcert) or similar.
 
-To publish module on GitHub Page, set "Source" of Pages on the repository settings according with [GitHub Docs](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source). 
+```sh
+npm run start -- --https
+```
 
-When you set "Source" of Pages on "`/(root)`" in "`main`" branch, your extension module is published under `https://<account>.github.io/<repository>/dist/<extensionID>.mjs`. 
+If you use [Visual Studio Code](https://code.visualstudio.com/), you can debug the development server using "debug on dev-server" in `scratch-gui/.vscode/launch.json`. If you load the extension module on this development server, you can set breakpoints in the extension source code and debug it with the debugging function of Visual Studio Code.
 
-If you would like to publish your extension module on another server, check the server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://xcratch.github.io/`. When CORS was not enabled on the server, Xcratch cannot import your module.
+----
+
+## Distributing the Extension
+
+### Deployment to GitHub Pages
+
+You can use [GitHub Pages](https://pages.github.com/) to deploy the extension module file.
+
+To publish the module on GitHub Page, follow [GitHub Docs](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source) to set the "Source" of Pages in the repository settings.
+
+If you set the "Source" of Pages to "`/(root)`" in the "`main`" branch, the extension module will be published at `https://<account>.github.io/<repository>/dist/<extensionID>.mjs`.
+
+If you want to publish the extension module on another server, check whether that server accepts [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) from `https://xcratch.github.io/`. If CORS is not enabled on the server, Xcratch cannot import the module.
 
 
-## Show Example
+### Showing Examples
 
-Xcratch can open project from URL and loads all extensions which is used in the project automatically without typing extension-URL.
+Xcratch can open a project from a URL and automatically load all extensions used in the project without entering the extension-URL.
 
-When you make a sample project using at least one block of your extension and save as `projects/example.sb3`. The project can be opened by Xcratch with URL like following.
+Create a sample project using at least one block of the newly created extension, save it as `projects/example.sb3`, and you can open this project in Xcratch with the following URL.
 
 ```
 https://xcratch.github.io/editor/#https://<account>.github.io/<repository>/projects/example.sb3
 ``` 
 
-You can also embed playable project in a web page with following HTML.
+You can also embed a moving project in a web page with the following HTML.
 
 ```html
 <iframe src="https://xcratch.github.io/editor/player#https://<account>.github.io/<repository>/projects/example.sb3" width="600px" height="500px"></iframe>
