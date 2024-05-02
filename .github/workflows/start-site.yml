@@ -19,7 +19,7 @@ jobs:
       - name: Inputs
         run: echo "${{ toJSON(inputs) }}"
       - name: checkout scratch-gui
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: xcratch/scratch-gui
           ref: ${{ inputs.branch }}
@@ -27,7 +27,7 @@ jobs:
       - run: npm install
         working-directory: ./scratch-gui
       - name: checkout xcratch.github.io
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch.github.io
           path: ./xcratch.github.io
@@ -42,7 +42,7 @@ jobs:
       - run: mv -T ./xcratch.github.io/public ./public
       - run: mv -T ./scratch-gui/build ./public/editor
       - name: checkout xcratch-doc
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch-doc
           path: ./xcratch-doc
