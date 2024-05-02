@@ -2,9 +2,9 @@ name: Start Site
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: "Branch of Xcratch"
-        default: "xcratch-dev"
+      checkout_ref:
+        description: "Checkout reference of Xcratch"
+        default: "xcratch-published"
         required: true
       dev:
         description: "Publish for development"
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: xcratch/scratch-gui
-          ref: ${{ inputs.branch }}
+          ref: ${{ inputs.checkout_ref }}
           path: ./scratch-gui
       - name: setup node
         uses: actions/setup-node@v4
