@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-74015f45'], (function (workbox) { 'use strict';
+define(['./workbox-74854057'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -78,38 +78,47 @@ define(['./workbox-74015f45'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "30d09ba32a17082ef820b57d52d60b7b.hex",
+    "url": "blocks-only.html",
+    "revision": "0c6a8b8aeb46c8f3681caa18f9f8eba5"
+  }, {
+    "url": "blocksonly.js",
+    "revision": "5b431a4eac71764fc94e4a5da7fd4a36"
+  }, {
+    "url": "blocksonly.js.map",
+    "revision": "b28772d6bef7603f092fb14d88828dc8"
+  }, {
+    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.adb28cd9cc6a661f8772.js",
     "revision": null
   }, {
-    "url": "blocks-only.html",
-    "revision": "d82d272739751cea956f92b26ff869eb"
+    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.adb28cd9cc6a661f8772.js.map",
+    "revision": "6c37449d2200716d063e859e92fe05b1"
   }, {
-    "url": "chunks/blocksonly.js",
-    "revision": "69be8e5e9dd2fceedc2cf5d02ee3f3a9"
+    "url": "chunks/vendors-node_modules_core-js_fn_array_includes_js-node_modules_core-js_fn_promise_finally_js--1b5d1a.374034b672c1543dc0e7.js",
+    "revision": null
   }, {
-    "url": "chunks/blocksonly.js.map",
-    "revision": "ca841ce619dfb8548a7a828640ac2f74"
+    "url": "chunks/vendors-node_modules_core-js_fn_array_includes_js-node_modules_core-js_fn_promise_finally_js--1b5d1a.374034b672c1543dc0e7.js.map",
+    "revision": "8e11e621e41fbdf6b19c0fc690f3d345"
   }, {
-    "url": "chunks/compatibilitytesting.js",
-    "revision": "ac45999e48b1b0905b60b5520d76bc74"
+    "url": "chunks/vendors-node_modules_microbit_microbit-universal-hex_dist_esm5_universal-hex_js-node_modules_-c70132.28b3ba48fe0854fdba4e.js",
+    "revision": null
   }, {
-    "url": "chunks/compatibilitytesting.js.map",
-    "revision": "abb4c571bda5ba0f17ab39721f059105"
-  }, {
-    "url": "chunks/gui.js",
-    "revision": "d77f468ed7db80fc0f83cc0d6ed08d3e"
-  }, {
-    "url": "chunks/gui.js.map",
-    "revision": "ccf52fa9c6fd059f387494c122164153"
-  }, {
-    "url": "chunks/player.js",
-    "revision": "38c6b8f3d94879cf24c244c5c2f33581"
-  }, {
-    "url": "chunks/player.js.map",
-    "revision": "ce46d26be0f9859dfabf9a6e06a7f71f"
+    "url": "chunks/vendors-node_modules_microbit_microbit-universal-hex_dist_esm5_universal-hex_js-node_modules_-c70132.28b3ba48fe0854fdba4e.js.map",
+    "revision": "341f4e0f0995bc4932f02dd62d928863"
   }, {
     "url": "compatibility-testing.html",
-    "revision": "b8db33c7b262a1f75ef93c9a534eec27"
+    "revision": "b085e1ca926d1d838498f586a8a1c545"
+  }, {
+    "url": "compatibilitytesting.js",
+    "revision": "2f9c7e5b4d7470a4542033ca91f0d31d"
+  }, {
+    "url": "compatibilitytesting.js.map",
+    "revision": "835f4b83780ca6eca7ca437b51386333"
+  }, {
+    "url": "gui.js",
+    "revision": "a38eebfdcc7b6e6274ff946a826323b5"
+  }, {
+    "url": "gui.js.map",
+    "revision": "7bbed2b1a308ca227ac4334765bb3406"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4105,363 +4114,321 @@ define(['./workbox-74015f45'], (function (workbox) { 'use strict';
     "revision": "ff8b8c3bf841a11fd5fe3afaa92be1b5"
   }, {
     "url": "index.html",
-    "revision": "7319b3b9131c4e9d2f4890ac990e7560"
-  }, {
-    "url": "lib.min.js",
-    "revision": "3eb420a4ed70ac517225de37d52c4d7d"
-  }, {
-    "url": "lib.min.js.map",
-    "revision": "ef0d15d750e4013771cd2ea11c7502d5"
+    "revision": "518694a947c560e643a4dfa6c5a14e3f"
   }, {
     "url": "player.html",
-    "revision": "b6914cb061899b8cdbe84ebd34b447cd"
+    "revision": "e357e1f5ad7f4df42ec576d9f3cc5c16"
   }, {
-    "url": "static/assets/00aa0c4320b93631ab3c223604ead431.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/03ca595a957a7e134daf6ede88176e1b.png",
-    "revision": null
-  }, {
-    "url": "static/assets/0ab67d44ea028509ccaed85363ef086e.png",
-    "revision": null
-  }, {
-    "url": "static/assets/10a6126b7bc54305463d0488d7b8c67e.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/133c58ac17103d7221dedca407c5a73f.jpg",
-    "revision": null
-  }, {
-    "url": "static/assets/165746cd277a144ddefd62ac5d67b696.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/1900166faa9222d0d10c568a12c848a5.png",
-    "revision": null
-  }, {
-    "url": "static/assets/223d68e7b8769bac1f33291514ce5bac.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/234e09c14ef1600eb376f7720b44cd8c.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/25db5e5bcc09e8b973e5e8775139a188.jpg",
-    "revision": null
-  }, {
-    "url": "static/assets/2d87300fabb15fd7c2ef59f9ca2fc921.jpg",
-    "revision": null
+    "url": "player.js",
+    "revision": "4d5c19854fe9ec6cd8300e255f4ef246"
   }, {
-    "url": "static/assets/306ffbcffad0d931fb1d158dd812f3fe.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/316864c7b28097124b92ead8b0524f54.jpg",
-    "revision": null
+    "url": "player.js.map",
+    "revision": "25e35ad20fb1a48cda331ff616ced709"
   }, {
-    "url": "static/assets/32d903cafc72328bd30afce14bfa4c79.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/355ba2dbdbde4c71b30f18f0764a2db1.png",
-    "revision": null
+    "url": "runtime.js",
+    "revision": "780050267cb37c73e3a335392fbdc9ea"
   }, {
-    "url": "static/assets/3a296d85c85a5f222663dad932737c86.svg",
-    "revision": null
+    "url": "runtime.js.map",
+    "revision": "7b79a8c624ed30db47e0cbeaff52a838"
   }, {
-    "url": "static/assets/3abda41e22f85951f4fa66565e286893.svg",
+    "url": "static/assets/108.305d9544ea2664d68da4.mp3",
     "revision": null
   }, {
-    "url": "static/assets/3d71dd48613895c4ed9d8f070cfbf32b.jpg",
+    "url": "static/assets/12-triangle.5d65db7479d2ec133050.mp3",
     "revision": null
   }, {
-    "url": "static/assets/3e6a0a68ee1872bee1f93e4428bcb993.svg",
+    "url": "static/assets/17-vibraslap.411dd7524a6050d50d71.mp3",
     "revision": null
   }, {
-    "url": "static/assets/40167d33efb7d0929a3bcbc591fc78b0.svg",
+    "url": "static/assets/24.83f9c095331307afdf20.mp3",
     "revision": null
   }, {
-    "url": "static/assets/418b2c6093a9ab9daa41f27868de425c.png",
+    "url": "static/assets/36.009d361b901a1796906f.mp3",
     "revision": null
   }, {
-    "url": "static/assets/47a31ffe10589efbb521b87ed70b8b76.jpg",
+    "url": "static/assets/36.215c8135a1a3a43044bd.mp3",
     "revision": null
   }, {
-    "url": "static/assets/48845e5afc905e2ebbd0fe9b16bae360.jpg",
+    "url": "static/assets/36.a3fa261b227288def62e.mp3",
     "revision": null
   }, {
-    "url": "static/assets/48df3abff5e8eb9a597f355daaf5348c.png",
+    "url": "static/assets/36.ae946219dab5570d7a63.mp3",
     "revision": null
   }, {
-    "url": "static/assets/497ac9f04f5ef248e65c952ffaa364e0.svg",
+    "url": "static/assets/36.c5d15b6a97e19014986d.mp3",
     "revision": null
   }, {
-    "url": "static/assets/4a2ce7f91157e3155ee7ad3a93d7bd7e.png",
+    "url": "static/assets/36.d2c7ea5a4af661cd490f.mp3",
     "revision": null
   }, {
-    "url": "static/assets/4f95145c890c2acc1f60ae898377f34c.png",
+    "url": "static/assets/4-crash-cymbal.a933295e78a83caac7ff.mp3",
     "revision": null
   }, {
-    "url": "static/assets/53f036b94c09775819ffb33a1026546c.png",
+    "url": "static/assets/48.143e8fac5fbcd51c7cb5.mp3",
     "revision": null
   }, {
-    "url": "static/assets/566d73a090e3d42d5bdfee3d92c79d25.svg",
+    "url": "static/assets/48.621c8312dd5edc6dac9c.mp3",
     "revision": null
   }, {
-    "url": "static/assets/589eaf6a247df5343b584fd0fa848489.svg",
+    "url": "static/assets/48.7c2b584cc2076ac402d8.mp3",
     "revision": null
   }, {
-    "url": "static/assets/5a34c79b9ae9516dd7692a4c39d02801.svg",
+    "url": "static/assets/48.99f73fdfec5a176cc337.mp3",
     "revision": null
   }, {
-    "url": "static/assets/602d48da2d064c459699292f2fcccfbc.jpg",
+    "url": "static/assets/48.c2afd6b9f09c3aff052a.mp3",
     "revision": null
   }, {
-    "url": "static/assets/61e99f0da6828d62aa9e3761c15ace9f.svg",
+    "url": "static/assets/48.c9b9773398ea58a31ae6.mp3",
     "revision": null
   }, {
-    "url": "static/assets/63edd39e6afe6627d8e6e8db62bff5a1.svg",
+    "url": "static/assets/48.d425d7faa64f7eae2e05.mp3",
     "revision": null
   }, {
-    "url": "static/assets/64e66a9dcf4b42a699f49e5973a4a62e.svg",
+    "url": "static/assets/60.188107b0a1d1c988af30.mp3",
     "revision": null
   }, {
-    "url": "static/assets/674db5c2e49df884273ac0f7d221865c.svg",
+    "url": "static/assets/60.19b38df26ffd101b25d7.mp3",
     "revision": null
   }, {
-    "url": "static/assets/679ce05ac8c35bbf83f596e895ab711b.svg",
+    "url": "static/assets/60.1a56316bf01049e9c7b8.mp3",
     "revision": null
   }, {
-    "url": "static/assets/6a559591c59185e10a44460bfa2c7fcb.jpg",
+    "url": "static/assets/60.1dfba3450783024ee0fc.mp3",
     "revision": null
   }, {
-    "url": "static/assets/6c1e56fd6b1c5ba7fb7dd57c0dca908b.jpg",
+    "url": "static/assets/60.1e7d212ccf5529cde45d.mp3",
     "revision": null
   }, {
-    "url": "static/assets/6d971205e4e09bbc704e3ea09bae1126.jpg",
+    "url": "static/assets/60.295e368316dc40f590ce.mp3",
     "revision": null
   }, {
-    "url": "static/assets/723302d314c4ed6c44590aca28fdcff8.jpg",
+    "url": "static/assets/60.2f616167a12ae87cd3e3.mp3",
     "revision": null
   }, {
-    "url": "static/assets/76911fb8f3dea25e9ed9b53db8b839c7.png",
+    "url": "static/assets/60.5151628e1602abd16aaa.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7808d3b49fdf33cb82e053f00a27ba33.png",
+    "url": "static/assets/60.5c28de8bc22270a00894.mp3",
     "revision": null
   }, {
-    "url": "static/assets/78e3f697df85275aa8d384ca6fc0e288.svg",
+    "url": "static/assets/60.65372c59fd23bfa55589.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7911235b3ccae7b7452ba3da6b5e9c7f.svg",
+    "url": "static/assets/60.7759bdc17254bb254c53.mp3",
     "revision": null
   }, {
-    "url": "static/assets/79a644579518611a7b397f85a32cfb85.svg",
+    "url": "static/assets/60.98f5150d029d486d1888.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7ad5cc6ed3d0a5fd6a273078fe3999f0.svg",
+    "url": "static/assets/60.9b7417823f2381b46501.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7bd83c9ad44bff4a20f0c19726adf8be.svg",
+    "url": "static/assets/60.a2a05ce8edbec520ba3b.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7c410b6c3cd2a9ee41505c5c6951bbf6.png",
+    "url": "static/assets/60.bd71972e0b2b91c24f8a.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7c67e2601425784a243cd7e0f15c50a3.svg",
+    "url": "static/assets/60.bdffa6c5ed530648c8bb.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7d043362c1c4cabd22aeb93b43fc5fc6.svg",
+    "url": "static/assets/60.cebe3fc50bb082383662.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7d2d28d80d4ae06acb4fdbde429448e6.svg",
+    "url": "static/assets/60.ddc63e0831fe37028e0e.mp3",
     "revision": null
   }, {
-    "url": "static/assets/7efe82fffae735cd083388badd51b3fa.svg",
+    "url": "static/assets/60.f17b9cc458bf64e058ad.mp3",
     "revision": null
   }, {
-    "url": "static/assets/82072226e8cf716289165650c31eeda2.svg",
+    "url": "static/assets/72.31651a7f690f4a42c2bc.mp3",
     "revision": null
   }, {
-    "url": "static/assets/831a9fd5f488f356a5031c289e4c35fe.svg",
+    "url": "static/assets/72.375ea26d76ba6c86b73f.mp3",
     "revision": null
   }, {
-    "url": "static/assets/85f62e9e77bed58778782e6cce58c1f4.svg",
+    "url": "static/assets/72.455f66f3d0b5abf62d54.mp3",
     "revision": null
   }, {
-    "url": "static/assets/86f568a0ecc0badac2c4952b39fff148.svg",
+    "url": "static/assets/72.a88299831e6e6800cd5a.mp3",
     "revision": null
   }, {
-    "url": "static/assets/8be7b8c8a8d7a982bf7f892af94629fe.svg",
+    "url": "static/assets/72.fdeeda4f45482dfc141e.mp3",
     "revision": null
   }, {
-    "url": "static/assets/91d07089280b0c51acfa3343d8827602.svg",
+    "url": "static/assets/84.2cc9b54ef7448f880917.mp3",
     "revision": null
   }, {
-    "url": "static/assets/93629e2fcf65ceb369724eca05b28547.png",
+    "url": "static/assets/84.373a95dcf920da8ccaff.mp3",
     "revision": null
   }, {
-    "url": "static/assets/93babda8f98fc8009c28e97f1f118b6f.png",
+    "url": "static/assets/96.1a7f5a47df2099c55062.mp3",
     "revision": null
   }, {
-    "url": "static/assets/945297ca77c041c98377f204e1af772e.svg",
+    "url": "static/assets/add-backdrop.3d71dd48613895c4ed9d.jpg",
     "revision": null
   }, {
-    "url": "static/assets/947a6530bad18e5d96fe3d3433f2f937.svg",
+    "url": "static/assets/add-effects.316864c7b28097124b92.jpg",
     "revision": null
   }, {
-    "url": "static/assets/95a83bd24f55a31899c4618d519abedd.svg",
+    "url": "static/assets/add-sprite.602d48da2d064c459699.jpg",
     "revision": null
   }, {
-    "url": "static/assets/963ae0ec26486c12da2ff71f88db604c.jpg",
+    "url": "static/assets/animate-a-character.9d72f82fa6dbcfca230a.jpg",
     "revision": null
   }, {
-    "url": "static/assets/964ebf18d6afc9069f92c37f506e7ba4.jpg",
+    "url": "static/assets/animate-a-name.d17af710c766436e3cce.jpg",
     "revision": null
   }, {
-    "url": "static/assets/968d91edff114957b894587cf739b92e.jpg",
+    "url": "static/assets/animate-sprite.ae69452028161eddf7a6.jpg",
     "revision": null
   }, {
-    "url": "static/assets/98bfc66ce081a3750f3b59ab67d0ac75.svg",
+    "url": "static/assets/boost-button-illustration.7bd83c9ad44bff4a20f0.svg",
     "revision": null
   }, {
-    "url": "static/assets/9c0ac6e5681567da6d6f6004ba107658.svg",
+    "url": "static/assets/boost-illustration.c3a88fa1746d8e5169db.svg",
     "revision": null
   }, {
-    "url": "static/assets/9d72f82fa6dbcfca230a68ba55d1fe96.jpg",
+    "url": "static/assets/boost.4a2ce7f91157e3155ee7.png",
     "revision": null
   }, {
-    "url": "static/assets/a11919e102077f40302da55fb9150440.svg",
+    "url": "static/assets/cartoon-network.963ae0ec26486c12da2f.jpg",
     "revision": null
   }, {
-    "url": "static/assets/a3e2db68a0243f03e75104ffd9d70972.jpg",
+    "url": "static/assets/cat_logo.82072226e8cf71628916.svg",
     "revision": null
   }, {
-    "url": "static/assets/a4c78e34e75a3b3ce76d65be091e26db.svg",
+    "url": "static/assets/change-size.25db5e5bcc09e8b973e5.jpg",
     "revision": null
   }, {
-    "url": "static/assets/a58d87cb7ce587fa7dcf05f3c3e97386.svg",
+    "url": "static/assets/chase-game.968d91edff114957b894.jpg",
     "revision": null
   }, {
-    "url": "static/assets/a6592ba549a17e9afeaaeedc93369d98.jpg",
+    "url": "static/assets/code-a-cartoon.a6592ba549a17e9afeaa.jpg",
     "revision": null
   }, {
-    "url": "static/assets/a72a652fdc84dc6983d3cc9596c36a26.svg",
+    "url": "static/assets/ev3-hub-illustration.e6e16daaf665399c8826.svg",
     "revision": null
   }, {
-    "url": "static/assets/a7fa73e1f7b8e8e6acfb9d3d28ff02ff.png",
+    "url": "static/assets/ev3.418b2c6093a9ab9daa41.png",
     "revision": null
   }, {
-    "url": "static/assets/aa52a97a8ebf84287c83f76fd541c659.png",
+    "url": "static/assets/extensionLoader.355ba2dbdbde4c71b30f.png",
     "revision": null
   }, {
-    "url": "static/assets/abcc6ff566f4c21e46c1c898490c2ccc.svg",
+    "url": "static/assets/gdxfor.03ca595a957a7e134daf.png",
     "revision": null
   }, {
-    "url": "static/assets/adc0b35e696de431abb9dd3ea90a5deb.svg",
+    "url": "static/assets/getting-started-asl.76911fb8f3dea25e9ed9.png",
     "revision": null
   }, {
-    "url": "static/assets/ae69452028161eddf7a68283600553b9.jpg",
+    "url": "static/assets/getting-started.2d87300fabb15fd7c2ef.jpg",
     "revision": null
   }, {
-    "url": "static/assets/af8e46c9477a8cadeb6c26b4686407a5.svg",
+    "url": "static/assets/glide-around.a3e2db68a0243f03e751.jpg",
     "revision": null
   }, {
-    "url": "static/assets/b14c7ec63fe05b011b845a3ebe47e812.svg",
+    "url": "static/assets/hide-and-show.ecd34a51965de9cc31cf.jpg",
     "revision": null
   }, {
-    "url": "static/assets/b1f026ce265c0f666e2063ef94b06109.svg",
+    "url": "static/assets/imagine.c50860fc8c66731a66ce.jpg",
     "revision": null
   }, {
-    "url": "static/assets/b2e37e698b1672b970671908f2f94004.jpg",
+    "url": "static/assets/make-it-fly.964ebf18d6afc9069f92.jpg",
     "revision": null
   }, {
-    "url": "static/assets/b3a6f3783f393f641dc3e51211dd50f4.svg",
+    "url": "static/assets/make-music.133c58ac17103d7221de.jpg",
     "revision": null
   }, {
-    "url": "static/assets/b631383707e87a454b479dedaa8ca014.svg",
+    "url": "static/assets/makeymakey.d93b3fbb26a6c63230cf.png",
     "revision": null
   }, {
-    "url": "static/assets/bc0fbf502b38884f440135ddae40016d.svg",
+    "url": "static/assets/microbit-illustration.d1f14e4e1372d8f9c090.svg",
     "revision": null
   }, {
-    "url": "static/assets/bd3bec8a8f45ebbf5e1d076b7c98c764.png",
+    "url": "static/assets/microbit-small.7d043362c1c4cabd22ae.svg",
     "revision": null
   }, {
-    "url": "static/assets/bf550f4c2ff75abf5d2d76e87470af92.svg",
+    "url": "static/assets/microbit.53f036b94c09775819ff.png",
     "revision": null
   }, {
-    "url": "static/assets/c14c0c1e852949eff4e6c069772b0015.svg",
+    "url": "static/assets/move-arrow-keys.d2d2931bdedce06edff2.jpg",
     "revision": null
   }, {
-    "url": "static/assets/c216c70ef78cc80a1538a3accc6612af.svg",
+    "url": "static/assets/music.e6f72b57b0d9ac6966cf.png",
     "revision": null
   }, {
-    "url": "static/assets/c3a88fa1746d8e5169db188302979317.svg",
+    "url": "static/assets/nineties_logo.945297ca77c041c98377.svg",
     "revision": null
   }, {
-    "url": "static/assets/c50860fc8c66731a66ce368e14283b75.jpg",
+    "url": "static/assets/pen.a7fa73e1f7b8e8e6acfb.png",
     "revision": null
   }, {
-    "url": "static/assets/ccffa5bb71a2219a2c0d91121edb46ea.svg",
+    "url": "static/assets/pong.48845e5afc905e2ebbd0.jpg",
     "revision": null
   }, {
-    "url": "static/assets/cd200d8b59d5c3d4ff3a69a774f5fac3.svg",
+    "url": "static/assets/pop-game.6a559591c59185e10a44.jpg",
     "revision": null
   }, {
-    "url": "static/assets/cee477fa706ab6fe733a65edd475c41b.svg",
+    "url": "static/assets/prehistoric-logo.98bfc66ce081a3750f3b.svg",
     "revision": null
   }, {
-    "url": "static/assets/d17af710c766436e3cceb28948d5efbc.jpg",
+    "url": "static/assets/record-a-sound.723302d314c4ed6c4459.jpg",
     "revision": null
   }, {
-    "url": "static/assets/d1f14e4e1372d8f9c0908d2f45aa5b54.svg",
+    "url": "static/assets/scratch-logo.91d07089280b0c51acfa.svg",
     "revision": null
   }, {
-    "url": "static/assets/d2167f2daa4c134da69bd74d18b7e94d.svg",
+    "url": "static/assets/scratch-microbit-1.2.0.30d09ba32a17082ef820.hex",
     "revision": null
   }, {
-    "url": "static/assets/d259fcbecaa9d2a22d19848daff9d4c6.svg",
+    "url": "static/assets/searching.48df3abff5e8eb9a597f.png",
     "revision": null
   }, {
-    "url": "static/assets/d2d2931bdedce06edff26a3ba7abe895.jpg",
+    "url": "static/assets/spin.b2e37e698b1672b97067.jpg",
     "revision": null
   }, {
-    "url": "static/assets/d47549bb6e9f027aec84dff992940caf.svg",
+    "url": "static/assets/talking.93629e2fcf65ceb36972.png",
     "revision": null
   }, {
-    "url": "static/assets/d6f44dd7136e86d27730830b54e8f9fd.png",
+    "url": "static/assets/telemetry-modal-header.93babda8f98fc8009c28.png",
     "revision": null
   }, {
-    "url": "static/assets/d93b3fbb26a6c63230cf52adeabbee15.png",
+    "url": "static/assets/tell-a-story.6d971205e4e09bbc704e.jpg",
     "revision": null
   }, {
-    "url": "static/assets/e4dfc45f34b4606356c4c70ba14a96f0.svg",
+    "url": "static/assets/text-to-speech.6c1e56fd6b1c5ba7fb7d.jpg",
     "revision": null
   }, {
-    "url": "static/assets/e6e16daaf665399c8826497dfb888260.svg",
+    "url": "static/assets/text2speech.0ab67d44ea028509ccae.png",
     "revision": null
   }, {
-    "url": "static/assets/e6f72b57b0d9ac6966cf74eece091052.png",
+    "url": "static/assets/translate.d6f44dd7136e86d27730.png",
     "revision": null
   }, {
-    "url": "static/assets/e91530fe8f85b7fdc983b48ab3b9885d.svg",
+    "url": "static/assets/translateIcon.ef4a998a82a8567de018.svg",
     "revision": null
   }, {
-    "url": "static/assets/e962bb14129d55b565bd1ebdebdf6cce.svg",
+    "url": "static/assets/unsupported.aa52a97a8ebf84287c83.png",
     "revision": null
   }, {
-    "url": "static/assets/ecd34a51965de9cc31cf3b2e9167054f.jpg",
+    "url": "static/assets/video-sensing.47a31ffe10589efbb521.jpg",
     "revision": null
   }, {
-    "url": "static/assets/ed3fe9e11706e76990709ac2e567ada6.svg",
+    "url": "static/assets/video-sensing.bd3bec8a8f45ebbf5e1d.png",
     "revision": null
   }, {
-    "url": "static/assets/ef4a998a82a8567de018baa4607bc6a0.svg",
+    "url": "static/assets/wedo-button-illustration.9c0ac6e5681567da6d6f.svg",
     "revision": null
   }, {
-    "url": "static/assets/f6d9f33ec366a89a58b3cf0e125adf97.svg",
+    "url": "static/assets/wedo-illustration.831a9fd5f488f356a503.svg",
     "revision": null
   }, {
-    "url": "static/assets/f9a0fb45ee35279e05b6f4e637509777.svg",
+    "url": "static/assets/wedo-small.86f568a0ecc0badac2c4.svg",
     "revision": null
   }, {
-    "url": "static/assets/ff69eb6d9e2044232f0187954982fb3c.png",
+    "url": "static/assets/wedo.4f95145c890c2acc1f60.png",
     "revision": null
   }, {
     "url": "static/blocks-media/default/1x1.gif",
