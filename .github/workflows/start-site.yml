@@ -25,6 +25,10 @@ jobs:
           ref: ${{ inputs.branch }}
           path: ./scratch-gui
       - run: npm install
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./scratch-gui/.nvmrc
         working-directory: ./scratch-gui
       - name: checkout xcratch.github.io
         uses: actions/checkout@v4
