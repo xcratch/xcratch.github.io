@@ -79,7 +79,7 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
    */
   workbox.precacheAndRoute([{
     "url": "blocks-only.html",
-    "revision": "0c6a8b8aeb46c8f3681caa18f9f8eba5"
+    "revision": "d80751ce8c6c1cc08b5253f7ad3e6da5"
   }, {
     "url": "blocksonly.js",
     "revision": "5b431a4eac71764fc94e4a5da7fd4a36"
@@ -87,11 +87,11 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "url": "blocksonly.js.map",
     "revision": "b28772d6bef7603f092fb14d88828dc8"
   }, {
-    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.adb28cd9cc6a661f8772.js",
+    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.c68668c9b1a3ee55415b.js",
     "revision": null
   }, {
-    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.adb28cd9cc6a661f8772.js.map",
-    "revision": "6c37449d2200716d063e859e92fe05b1"
+    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.c68668c9b1a3ee55415b.js.map",
+    "revision": "707118acb2c63ea3b0018b00e8aa9566"
   }, {
     "url": "chunks/vendors-node_modules_core-js_fn_array_includes_js-node_modules_core-js_fn_promise_finally_js--1b5d1a.374034b672c1543dc0e7.js",
     "revision": null
@@ -106,7 +106,7 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "revision": "341f4e0f0995bc4932f02dd62d928863"
   }, {
     "url": "compatibility-testing.html",
-    "revision": "b085e1ca926d1d838498f586a8a1c545"
+    "revision": "f77c7f3cd594f1d59f24403c49926df5"
   }, {
     "url": "compatibilitytesting.js",
     "revision": "2f9c7e5b4d7470a4542033ca91f0d31d"
@@ -115,10 +115,10 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "revision": "835f4b83780ca6eca7ca437b51386333"
   }, {
     "url": "gui.js",
-    "revision": "a38eebfdcc7b6e6274ff946a826323b5"
+    "revision": "5b6e5eb064e0f3ae9569a6e1e82b442e"
   }, {
     "url": "gui.js.map",
-    "revision": "7bbed2b1a308ca227ac4334765bb3406"
+    "revision": "1605735b0404c3ca6d3ac217ee924dd8"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4114,10 +4114,10 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "revision": "ff8b8c3bf841a11fd5fe3afaa92be1b5"
   }, {
     "url": "index.html",
-    "revision": "518694a947c560e643a4dfa6c5a14e3f"
+    "revision": "4f2793af01203677acf48a4de8017874"
   }, {
     "url": "player.html",
-    "revision": "e357e1f5ad7f4df42ec576d9f3cc5c16"
+    "revision": "4ab88a2b31c1e86e16c0cdfaa20971e7"
   }, {
     "url": "player.js",
     "revision": "4d5c19854fe9ec6cd8300e255f4ef246"

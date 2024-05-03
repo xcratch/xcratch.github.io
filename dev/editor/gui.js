@@ -144,7 +144,7 @@ const handleTelemetryModalOptOut = () => {
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(WrappedGui, {
     canEditTitle: true,
     backpackVisible: true,
-    showComingSoon: true,
+    showComingSoon: false,
     backpackHost: backpackHost,
     canSave: false,
     onClickLogo: onClickLogo
