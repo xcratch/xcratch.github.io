@@ -3,7 +3,6 @@
   "version": "0.3.1",
   "description": "Site of Xcratch",
   "scripts": {
-    "setup": "node ./scripts/replace-logo.js \"../scratch-gui\" && node ./scripts/original-assets.js \"../scratch-gui\"",
     "start": "cd ../scratch-gui && npm run start -- --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

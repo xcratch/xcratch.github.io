@@ -35,10 +35,6 @@ jobs:
         with:
           repository: xcratch/xcratch.github.io
           path: ./xcratch.github.io
-      - run: node ./scripts/replace-logo.js ../scratch-gui
-        working-directory: ./xcratch.github.io
-      - run: node ./scripts/original-assets.js ../scratch-gui
-        working-directory: ./xcratch.github.io
       - name: build scratch-gui
         run: npm run build
         working-directory: ./scratch-gui
