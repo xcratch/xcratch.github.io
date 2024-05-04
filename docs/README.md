@@ -29,6 +29,16 @@ or add a query parameter labeled `project`
 
 `https://xcratch.github.io/editor/?project=<project-URL>`
 
+
+### UI improvements from Scratch Foundation version
+
+- Numbers entered with double-byte characters can be used as numerical values.
+- New line (\n) and tab (\t) characters can be used for "say", "think", and "=" decision.
+- You can see the hidden part on the right side of the block palette.
+- Backpack can be used on your own server.
+- Open the original project from the player in a separate page.
+
+
 ## Sample Extensions
 
 ### ✨ Microbit More 
