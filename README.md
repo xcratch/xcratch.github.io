@@ -8,17 +8,11 @@ Open https://xcratch.github.io/ then press _'Open Editor'_ button.
 
 ## Development
 
-There are some npm scripts for development.
-
-- setup
-  It replaces the logo and the default project.
-
-- start
-  It starts GUI dev-server with https.
+This site is developed with [xcratch/scratch-vm](https://github.com/xcratch/scratch-vm) and [xcratch/scratch-gui](https://github.com/xcratch/scratch-gui).
 
 ## Sponsors
 
-2022-
+2022-2024:
 
 ### TFabWorks
 [![TFabWorks](https://tfabworks.com/wp-content/themes/tfabworks/img/logo/logo-png.png)](https://tfabworks.com/)
