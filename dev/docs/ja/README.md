@@ -28,6 +28,15 @@ https://xcratch.github.io/editor/#<プロジェクトURL>`。
 
 https://xcratch.github.io/editor/?project=<プロジェクトURL>`。
 
+### Scratch Foundation版からのUIの改善
+
+- 全角文字で入力した数字を数値として利用できる
+- 「言う」「考える」や「=」判定に改行(\n)やタブ(\t)文字を使える
+- ブロックパレットの右端にかくれた部分が見える
+- 独自サーバーでも Backpack を使える
+- プレイヤーから元のプロジェクトを別ページで開く
+
+
 ## 拡張機能の例
 
 ### ✨ Microbit More 

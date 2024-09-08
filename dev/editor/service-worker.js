@@ -78,47 +78,32 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
+    "url": "30d09ba32a17082ef820b57d52d60b7b.hex",
+    "revision": null
+  }, {
     "url": "blocks-only.html",
-    "revision": "d80751ce8c6c1cc08b5253f7ad3e6da5"
+    "revision": "27bad761781876ac873293376bed6aa7"
   }, {
     "url": "blocksonly.js",
-    "revision": "5b431a4eac71764fc94e4a5da7fd4a36"
+    "revision": "06613e89eb1bce68198c49ca2778215d"
   }, {
     "url": "blocksonly.js.map",
-    "revision": "b28772d6bef7603f092fb14d88828dc8"
-  }, {
-    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.c68668c9b1a3ee55415b.js",
-    "revision": null
-  }, {
-    "url": "chunks/src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.c68668c9b1a3ee55415b.js.map",
-    "revision": "707118acb2c63ea3b0018b00e8aa9566"
-  }, {
-    "url": "chunks/vendors-node_modules_core-js_fn_array_includes_js-node_modules_core-js_fn_promise_finally_js--1b5d1a.374034b672c1543dc0e7.js",
-    "revision": null
-  }, {
-    "url": "chunks/vendors-node_modules_core-js_fn_array_includes_js-node_modules_core-js_fn_promise_finally_js--1b5d1a.374034b672c1543dc0e7.js.map",
-    "revision": "8e11e621e41fbdf6b19c0fc690f3d345"
-  }, {
-    "url": "chunks/vendors-node_modules_microbit_microbit-universal-hex_dist_esm5_universal-hex_js-node_modules_-c70132.28b3ba48fe0854fdba4e.js",
-    "revision": null
-  }, {
-    "url": "chunks/vendors-node_modules_microbit_microbit-universal-hex_dist_esm5_universal-hex_js-node_modules_-c70132.28b3ba48fe0854fdba4e.js.map",
-    "revision": "341f4e0f0995bc4932f02dd62d928863"
+    "revision": "e4c1f86a2c09a1934b49266d3e1248d5"
   }, {
     "url": "compatibility-testing.html",
-    "revision": "f77c7f3cd594f1d59f24403c49926df5"
+    "revision": "2cb58f433e173d4f4430a52de342fc8c"
   }, {
     "url": "compatibilitytesting.js",
-    "revision": "2f9c7e5b4d7470a4542033ca91f0d31d"
+    "revision": "3620a105a6f11cd98cc597584f0108a2"
   }, {
     "url": "compatibilitytesting.js.map",
-    "revision": "835f4b83780ca6eca7ca437b51386333"
+    "revision": "9229b73d9e56402fb2e79be5d517ca9e"
   }, {
     "url": "gui.js",
-    "revision": "5b6e5eb064e0f3ae9569a6e1e82b442e"
+    "revision": "aa7e58363f65c6544cac989ac2149785"
   }, {
     "url": "gui.js.map",
-    "revision": "1605735b0404c3ca6d3ac217ee924dd8"
+    "revision": "74f52a2ebfd9445166b65839c5f2cc3d"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4114,157 +4099,16 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "revision": "ff8b8c3bf841a11fd5fe3afaa92be1b5"
   }, {
     "url": "index.html",
-    "revision": "4f2793af01203677acf48a4de8017874"
+    "revision": "f062528523eada190522bb7779f0c948"
   }, {
     "url": "player.html",
-    "revision": "4ab88a2b31c1e86e16c0cdfaa20971e7"
+    "revision": "26995b0a20e6116f4d27e69dd18dcb34"
   }, {
     "url": "player.js",
-    "revision": "4d5c19854fe9ec6cd8300e255f4ef246"
+    "revision": "c3399d2ff6a42089af3a612fc97297c3"
   }, {
     "url": "player.js.map",
-    "revision": "25e35ad20fb1a48cda331ff616ced709"
-  }, {
-    "url": "runtime.js",
-    "revision": "780050267cb37c73e3a335392fbdc9ea"
-  }, {
-    "url": "runtime.js.map",
-    "revision": "7b79a8c624ed30db47e0cbeaff52a838"
-  }, {
-    "url": "static/assets/108.305d9544ea2664d68da4.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/12-triangle.5d65db7479d2ec133050.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/17-vibraslap.411dd7524a6050d50d71.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/24.83f9c095331307afdf20.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.009d361b901a1796906f.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.215c8135a1a3a43044bd.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.a3fa261b227288def62e.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.ae946219dab5570d7a63.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.c5d15b6a97e19014986d.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/36.d2c7ea5a4af661cd490f.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/4-crash-cymbal.a933295e78a83caac7ff.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.143e8fac5fbcd51c7cb5.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.621c8312dd5edc6dac9c.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.7c2b584cc2076ac402d8.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.99f73fdfec5a176cc337.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.c2afd6b9f09c3aff052a.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.c9b9773398ea58a31ae6.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/48.d425d7faa64f7eae2e05.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.188107b0a1d1c988af30.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.19b38df26ffd101b25d7.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.1a56316bf01049e9c7b8.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.1dfba3450783024ee0fc.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.1e7d212ccf5529cde45d.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.295e368316dc40f590ce.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.2f616167a12ae87cd3e3.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.5151628e1602abd16aaa.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.5c28de8bc22270a00894.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.65372c59fd23bfa55589.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.7759bdc17254bb254c53.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.98f5150d029d486d1888.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.9b7417823f2381b46501.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.a2a05ce8edbec520ba3b.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.bd71972e0b2b91c24f8a.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.bdffa6c5ed530648c8bb.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.cebe3fc50bb082383662.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.ddc63e0831fe37028e0e.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/60.f17b9cc458bf64e058ad.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/72.31651a7f690f4a42c2bc.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/72.375ea26d76ba6c86b73f.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/72.455f66f3d0b5abf62d54.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/72.a88299831e6e6800cd5a.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/72.fdeeda4f45482dfc141e.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/84.2cc9b54ef7448f880917.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/84.373a95dcf920da8ccaff.mp3",
-    "revision": null
-  }, {
-    "url": "static/assets/96.1a7f5a47df2099c55062.mp3",
-    "revision": null
+    "revision": "9b0dd3bf7b6d116d44baa44dcc75583a"
   }, {
     "url": "static/assets/add-backdrop.3d71dd48613895c4ed9d.jpg",
     "revision": null
@@ -4378,9 +4222,6 @@ define(['./workbox-74854057'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "static/assets/scratch-logo.91d07089280b0c51acfa.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/scratch-microbit-1.2.0.30d09ba32a17082ef820.hex",
     "revision": null
   }, {
     "url": "static/assets/searching.48df3abff5e8eb9a597f.png",
