@@ -85,7 +85,7 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": "33a5389897616f2ce5b55e1c4bf1ac5d"
   }, {
     "url": "blocksonly.js",
-    "revision": "5827085f5de131e889d3f7503864ed9b"
+    "revision": "96638a16730a8f2d6da831b63f304186"
   }, {
     "url": "blocksonly.js.map",
     "revision": "ac4bcd8c829ef31d5364fa3e49b2170a"
@@ -97,13 +97,13 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": "f5d0a3fb891b7ac457e9ecf623da2017"
   }, {
     "url": "compatibilitytesting.js",
-    "revision": "9fb54217a9fb3c44618ebeb166d4a7c7"
+    "revision": "5a2157ffb94f6027fc0b830ce089e451"
   }, {
     "url": "compatibilitytesting.js.map",
     "revision": "baa9ed92738ae6c841d366443e85a665"
   }, {
     "url": "gui.js",
-    "revision": "5c771209309ae89de86c23c94b13e16c"
+    "revision": "e4d2d583a2850086fd602363dddc8b9e"
   }, {
     "url": "gui.js.map",
     "revision": "031836410b2071857da9bf67cd657d8e"
@@ -4108,7 +4108,7 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": "f473d17effaa7ce8de46bfbd3cc2ee20"
   }, {
     "url": "player.js",
-    "revision": "d643cea15146a73b5e4b85b95bd2dde0"
+    "revision": "68e436947083074b3612f9dfd13a4d23"
   }, {
     "url": "player.js.map",
     "revision": "e3c9888f16c0f38a46a738729cbabf01"
