@@ -1,0 +1,14 @@
+"use strict";
+(self["webpackChunkGUI"] = self["webpackChunkGUI"] || []).push([["preload_preload_json"],{
+
+/***/ "./preload/preload.json":
+/*!******************************!*\
+  !*** ./preload/preload.json ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('[{"url":"https://yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-web-channel%2Fdist%2FxcxWebChannel%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-qr/dist/xcxQR.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-qr%2Fdist%2FxcxQR%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-mesh%2Fdist%2FxcxMesh%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-key-events/dev/dist/keyEvents.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-key-events%2Fdev%2Fdist%2FkeyEvents%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-http-request/dist/httpRequest.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-http-request%2Fdist%2FhttpRequest%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-gamepad%2Fdist%2FwebGamepad%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-gai/dist/gai.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-gai%2Fdist%2Fgai%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-costumex/dist/costumex.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-costumex%2Fdist%2Fcostumex%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-browser-channel%2Fdist%2FxcxBrowserChannel%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-audio-analyser%2Fdist%2FxcxAudioAnalyser%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs","count":100,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-arduino%2Fdist%2FxcxArduino%2Emjs/extension.mjs"},{"url":"https://microbit-more.github.io/dist/microbitMore.mjs","count":100,"path":"https%3A%2F%2Fmicrobit-more%2Egithub%2Eio%2Fdist%2FmicrobitMore%2Emjs/extension.mjs"},{"url":"https://yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs","count":99,"path":"https%3A%2F%2Fyokobond%2Egithub%2Eio%2Fxcx-vpen%2Fdist%2FxcxVPen%2Emjs/extension.mjs"}]');
+
+/***/ })
+
+}]);
