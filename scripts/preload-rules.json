@@ -1,4 +1,22 @@
 {
     "approved": [
+        "https://microbit-more.github.io/dist/microbitMore.mjs",
+        "https://yokobond.github.io/xcx-http-request/dist/httpRequest.mjs",
+        "https://yokobond.github.io/xcx-key-events/dist/keyEvents.mjs",
+        "https://yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs",
+        "https://yokobond.github.io/xcx-gai/dist/gai.mjs",
+        "https://yokobond.github.io/xcx-costumex/dist/costumex.mjs",
+        "https://yokobond.github.io/xcx-qr/dist/xcxQR.mjs",
+        "https://yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs",
+        "https://yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs",
+        "https://yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs",
+        "https://yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs",
+        "https://yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs",
+        "https://yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs",
+        "https://tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
+        "https://tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
+        "https://yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
+        "https://yokobond.github.io/xcx-tf-knn/dist/tfknn.mjs",
+        "https://yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs"
     ]
 }
