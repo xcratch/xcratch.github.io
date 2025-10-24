@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-e833d894'], (function (workbox) { 'use strict';
+define(['./workbox-74854057'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -82,25 +82,28 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "blocks-only.html",
-    "revision": "33a5389897616f2ce5b55e1c4bf1ac5d"
+    "revision": "27bad761781876ac873293376bed6aa7"
   }, {
-    "url": "chunks/fetch-worker.7a0adc94df277ffeb963.js",
-    "revision": "6168f8ef73297b5d19c87420e939dbc2"
+    "url": "blocksonly.js",
+    "revision": "06613e89eb1bce68198c49ca2778215d"
   }, {
-    "url": "chunks/fetch-worker.7a0adc94df277ffeb963.js.map",
-    "revision": "68982366a63719eb7655c34e13ab1c7c"
-  }, {
-    "url": "chunks/fetch-worker.8bbacefe075269d0b1c5.js",
-    "revision": "75fb90e2ffad050af109350018e55cfa"
-  }, {
-    "url": "chunks/fetch-worker.8bbacefe075269d0b1c5.js.map",
-    "revision": "4f4db26bac143fcac63f0f79876b02a9"
-  }, {
-    "url": "chunks/preload_preload_json.a99058c463729a5345f2.js",
-    "revision": null
+    "url": "blocksonly.js.map",
+    "revision": "e4c1f86a2c09a1934b49266d3e1248d5"
   }, {
     "url": "compatibility-testing.html",
-    "revision": "f5d0a3fb891b7ac457e9ecf623da2017"
+    "revision": "2cb58f433e173d4f4430a52de342fc8c"
+  }, {
+    "url": "compatibilitytesting.js",
+    "revision": "3620a105a6f11cd98cc597584f0108a2"
+  }, {
+    "url": "compatibilitytesting.js.map",
+    "revision": "9229b73d9e56402fb2e79be5d517ca9e"
+  }, {
+    "url": "gui.js",
+    "revision": "aa7e58363f65c6544cac989ac2149785"
+  }, {
+    "url": "gui.js.map",
+    "revision": "74f52a2ebfd9445166b65839c5f2cc3d"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4096,10 +4099,16 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": "ff8b8c3bf841a11fd5fe3afaa92be1b5"
   }, {
     "url": "index.html",
-    "revision": "e0ff0c56e30dcb7fbc78bfbd24e108d8"
+    "revision": "f062528523eada190522bb7779f0c948"
   }, {
     "url": "player.html",
-    "revision": "f473d17effaa7ce8de46bfbd3cc2ee20"
+    "revision": "26995b0a20e6116f4d27e69dd18dcb34"
+  }, {
+    "url": "player.js",
+    "revision": "c3399d2ff6a42089af3a612fc97297c3"
+  }, {
+    "url": "player.js.map",
+    "revision": "9b0dd3bf7b6d116d44baa44dcc75583a"
   }, {
     "url": "static/assets/add-backdrop.3d71dd48613895c4ed9d.jpg",
     "revision": null
@@ -4165,15 +4174,6 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "static/assets/hide-and-show.ecd34a51965de9cc31cf.jpg",
-    "revision": null
-  }, {
-    "url": "static/assets/icon--ask-for-help.2d8981e9181912da973a.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/icon--take-a-break.fac6bba18ebb1fa52d05.svg",
-    "revision": null
-  }, {
-    "url": "static/assets/icon--timing-and-parallelism.178958615d2e0c30bf57.svg",
     "revision": null
   }, {
     "url": "static/assets/imagine.c50860fc8c66731a66ce.jpg",
