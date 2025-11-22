@@ -1,4 +1,5 @@
 name: Start Site
+
 on:
   workflow_dispatch:
     inputs:
@@ -12,56 +13,94 @@ on:
         default: true
         required: true
 
+permissions:
+  contents: write
+
+env:
+  SCRATCH_GUI_DIR: ./scratch-gui
+  XCRATCH_IO_DIR: ./xcratch.github.io
+  XCRATCH_DOC_DIR: ./xcratch-doc
+  PUBLIC_DIR: ./public
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Inputs
+      # デバッグ: 入力パラメータの表示
+      - name: Display workflow inputs
         run: echo "${{ toJSON(inputs) }}"
-      - name: checkout scratch-gui
+      
+      # リポジトリのチェックアウト
+      - name: Checkout scratch-gui
         uses: actions/checkout@v4
         with:
           repository: xcratch/scratch-gui
           ref: ${{ inputs.checkout_ref }}
-          path: ./scratch-gui
-      - name: setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ./scratch-gui/.nvmrc
-      - run: npm ci
-        working-directory: ./scratch-gui
-      - name: checkout xcratch.github.io
+          path: ${{ env.SCRATCH_GUI_DIR }}
+      
+      - name: Checkout xcratch.github.io
         uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch.github.io
-          path: ./xcratch.github.io
-      - name: setup preload
-        run: cp ./xcratch.github.io/scripts/preload-rules.json ./scratch-gui/scripts/preload-rules.json
-      - name: build scratch-gui
-        run: npm run build
-        working-directory: ./scratch-gui
-      - run: cp ./xcratch.github.io/editor/favicon.ico ./scratch-gui/build/static/favicon.ico
-      - run: mv -T ./xcratch.github.io/public ./public
-      - run: mv -T ./scratch-gui/build ./public/editor
-      - name: checkout xcratch-doc
+          path: ${{ env.XCRATCH_IO_DIR }}
+      
+      - name: Checkout xcratch-doc
         uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch-doc
-          path: ./xcratch-doc
-      - run: mv -T ./xcratch-doc/docs ./public/docs
-      - name: publish for dev
+          path: ${{ env.XCRATCH_DOC_DIR }}
+      
+      # Node.js環境のセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ${{ env.SCRATCH_GUI_DIR }}/.nvmrc
+          cache: npm
+          cache-dependency-path: ${{ env.SCRATCH_GUI_DIR }}/package-lock.json
+      
+      # 依存関係のインストール
+      - name: Install dependencies
+        working-directory: ${{ env.SCRATCH_GUI_DIR }}
+        run: npm ci
+      
+      # ビルド準備
+      - name: Setup preload configuration
+        run: cp ${{ env.XCRATCH_IO_DIR }}/scripts/preload-rules.json ${{ env.SCRATCH_GUI_DIR }}/scripts/preload-rules.json
+      
+      # ビルド実行
+      - name: Build scratch-gui
+        working-directory: ${{ env.SCRATCH_GUI_DIR }}
+        run: npm run build
+      
+      # 公開ディレクトリの構築
+      - name: Copy favicon
+        run: cp ${{ env.XCRATCH_IO_DIR }}/editor/favicon.ico ${{ env.SCRATCH_GUI_DIR }}/build/static/favicon.ico
+      
+      - name: Setup public directory
+        run: mv -T ${{ env.XCRATCH_IO_DIR }}/public ${{ env.PUBLIC_DIR }}
+      
+      - name: Move editor files
+        run: mv -T ${{ env.SCRATCH_GUI_DIR }}/build ${{ env.PUBLIC_DIR }}/editor
+      
+      - name: Move documentation files
+        run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
+      
+      # デプロイ
+      - name: Publish to GitHub Pages (dev)
         if: ${{ inputs.dev }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ${{ env.PUBLIC_DIR }}
           destination_dir: ./dev
           keep_files: false
-      - name: publish
+      
+      - name: Publish to GitHub Pages (production)
         if: ${{ !inputs.dev }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ${{ env.PUBLIC_DIR }}
           destination_dir: .
           keep_files: true
