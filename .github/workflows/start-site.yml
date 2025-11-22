@@ -4,7 +4,7 @@ on:
     inputs:
       checkout_ref:
         description: "Checkout reference of Xcratch"
-        default: "xcratch-published"
+        default: "xcratch.github.io"
         required: true
       dev:
         description: "Publish for development"
