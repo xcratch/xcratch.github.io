@@ -84,11 +84,143 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "url": "blocks-only.html",
     "revision": "33a5389897616f2ce5b55e1c4bf1ac5d"
   }, {
-    "url": "chunks/preload_preload_json.34f8912a20c92cc80681.js",
+    "url": "blocksonly.js",
+    "revision": "528801e0206a928b2e9687fff833d1f4"
+  }, {
+    "url": "blocksonly.js.map",
+    "revision": "7084352b4690cf149358a3e5d30f94b3"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fmicrobit-more_2Egithub_2Eio_2Fdist_2FmicrobitMore_2Emjs_extension_mjs.9eb572b6c52ed958cc57.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fmicrobit-more_2Egithub_2Eio_2Fdist_2FmicrobitMore_2Emjs_extension_mjs.9eb572b6c52ed958cc57.js.map",
+    "revision": "60f14360ecfc243880c6164db15f4d37"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Ftfabworks_2Egithub_2Eio_2Fxcx-cameraselector_2Fdist_2Fcameraselector_2E-ede81e.70a777b7f6e881892526.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Ftfabworks_2Egithub_2Eio_2Fxcx-cameraselector_2Fdist_2Fcameraselector_2E-ede81e.70a777b7f6e881892526.js.map",
+    "revision": "482ac0e5a0d0eba1ddea698f5077ac3a"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Ftfabworks_2Egithub_2Eio_2Fxcx-g2s_2Fdist_2Fg2s-m_2Emjs_extension_mjs.3b4e09555039959efbe5.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Ftfabworks_2Egithub_2Eio_2Fxcx-g2s_2Fdist_2Fg2s-m_2Emjs_extension_mjs.3b4e09555039959efbe5.js.map",
+    "revision": "e3dc9405bed33fbf8ab6e360a0d96156"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-arduino_2Fdist_2FxcxArduino_2Emjs_extension_mjs.8f8e6f1b0892fc9c45a4.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-arduino_2Fdist_2FxcxArduino_2Emjs_extension_mjs.8f8e6f1b0892fc9c45a4.js.map",
+    "revision": "01f37ea412db2035d339d39ca69e6f76"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-audio-analyser_2Fdist_2FxcxAudioAnalyser_2-d2c380.a21a298d4ff6369ad65a.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-audio-analyser_2Fdist_2FxcxAudioAnalyser_2-d2c380.a21a298d4ff6369ad65a.js.map",
+    "revision": "3ef15e9a188cfeaabe789f2683c9bb51"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-browser-channel_2Fdist_2FxcxBrowserChannel-2da0f6.b810fc16e3b4c112b285.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-browser-channel_2Fdist_2FxcxBrowserChannel-2da0f6.b810fc16e3b4c112b285.js.map",
+    "revision": "8a198ee8b7bd9d18be765393b1487295"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-costumex_2Fdist_2Fcostumex_2Emjs_extension_mjs.60110663e7696594a03c.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-costumex_2Fdist_2Fcostumex_2Emjs_extension_mjs.60110663e7696594a03c.js.map",
+    "revision": "ea9214375238684817f4bd60f9958283"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-gai_2Fdist_2Fgai_2Emjs_extension_mjs.a81335bfe646a035a5ed.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-gai_2Fdist_2Fgai_2Emjs_extension_mjs.a81335bfe646a035a5ed.js.map",
+    "revision": "12452495ccb99128442d504e5db72a56"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-gamepad_2Fdist_2FwebGamepad_2Emjs_extension_mjs.0c32ff6cf26f5c6675e8.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-gamepad_2Fdist_2FwebGamepad_2Emjs_extension_mjs.0c32ff6cf26f5c6675e8.js.map",
+    "revision": "78e10ea0d070d371b6d08ec9ae0792e1"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-http-request_2Fdist_2FhttpRequest_2Emjs_ex-85a341.8287e5c78b23c4130948.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-http-request_2Fdist_2FhttpRequest_2Emjs_ex-85a341.8287e5c78b23c4130948.js.map",
+    "revision": "c2322e926b0476a43f9f2e804c543cfa"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-key-events_2Fdist_2FkeyEvents_2Emjs_extens-a72b49.b8a41c3d4e83560b0b76.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-key-events_2Fdist_2FkeyEvents_2Emjs_extens-a72b49.b8a41c3d4e83560b0b76.js.map",
+    "revision": "96485cecd2dc45ee187304c605a1f036"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mesh_2Fdist_2FxcxMesh_2Emjs_extension_mjs.db6f977074d945cc8e5d.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mesh_2Fdist_2FxcxMesh_2Emjs_extension_mjs.db6f977074d945cc8e5d.js.map",
+    "revision": "39234d4f27e4a58a5805d628980488ac"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mp-hand_2Fdist_2FxcxMPHand_2Emjs_extension_mjs.1001499da001783245ea.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mp-hand_2Fdist_2FxcxMPHand_2Emjs_extension_mjs.1001499da001783245ea.js.map",
+    "revision": "d9aada106f855c691f710362c02cae3a"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mp-image-embed_2Fdist_2FmpImageEmbed_2Emjs-64db41.82e91780db9a18d4ec54.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-mp-image-embed_2Fdist_2FmpImageEmbed_2Emjs-64db41.82e91780db9a18d4ec54.js.map",
+    "revision": "7ddc6a3bdfe3d9d2968f7f122ea0eaca"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-qr_2Fdist_2FxcxQR_2Emjs_extension_mjs.77a9ef49e1971054111b.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-qr_2Fdist_2FxcxQR_2Emjs_extension_mjs.77a9ef49e1971054111b.js.map",
+    "revision": "f9302870cc01b3485f7edc1ef429fbe1"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-tf-knn_2Fdist_2Ftfknn-entry_2Emjs_entry_mjs.f4d2aac171307b01d6d8.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-tf-knn_2Fdist_2Ftfknn-entry_2Emjs_entry_mjs.f4d2aac171307b01d6d8.js.map",
+    "revision": "95a7cc00635dd8566431b2ba02e72b74"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-tf-knn_2Fdist_2Ftfknn-entry_2Emjs_extension_mjs.e4c7e51a8ffc604bf8a3.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-tf-knn_2Fdist_2Ftfknn-entry_2Emjs_extension_mjs.e4c7e51a8ffc604bf8a3.js.map",
+    "revision": "f3234c3c1630550b5ec67f980854fa5d"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-vpen_2Fdist_2FxcxVPen_2Emjs_extension_mjs.70fe3849586c1dfbffb0.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-vpen_2Fdist_2FxcxVPen_2Emjs_extension_mjs.70fe3849586c1dfbffb0.js.map",
+    "revision": "aa7119febcac6c6468caa06d7e37e954"
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-web-channel_2Fdist_2FxcxWebChannel_2Emjs_e-f5a8d7.353315445c84b779c58d.js",
+    "revision": null
+  }, {
+    "url": "chunks/preload_https_3A_2F_2Fyokobond_2Egithub_2Eio_2Fxcx-web-channel_2Fdist_2FxcxWebChannel_2Emjs_e-f5a8d7.353315445c84b779c58d.js.map",
+    "revision": "41b4284c43d1de1a1e73aac193079cdb"
+  }, {
+    "url": "chunks/preload_preload_json.797b131b39038e6b63a5.js",
     "revision": null
   }, {
     "url": "compatibility-testing.html",
     "revision": "f5d0a3fb891b7ac457e9ecf623da2017"
+  }, {
+    "url": "compatibilitytesting.js",
+    "revision": "86a5074b3a7f6370b62852f5961c5068"
+  }, {
+    "url": "compatibilitytesting.js.map",
+    "revision": "9b1c0a4ffeaf58d7862ffc7c043d10d1"
+  }, {
+    "url": "gui.js",
+    "revision": "81672e60603099e08f4afbb2470fc6e3"
+  }, {
+    "url": "gui.js.map",
+    "revision": "3e889d6ffe82a479aab3bc94310f7c6e"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4088,6 +4220,12 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
   }, {
     "url": "player.html",
     "revision": "f473d17effaa7ce8de46bfbd3cc2ee20"
+  }, {
+    "url": "player.js",
+    "revision": "fad8f9f5f57ce18caf6540635833807a"
+  }, {
+    "url": "player.js.map",
+    "revision": "be0c471d0a72e5bde9fce89c2ba32585"
   }, {
     "url": "static/assets/add-backdrop.3d71dd48613895c4ed9d.jpg",
     "revision": null
