@@ -84,11 +84,26 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
     "url": "blocks-only.html",
     "revision": "33a5389897616f2ce5b55e1c4bf1ac5d"
   }, {
-    "url": "chunks/preload_preload_json.34f8912a20c92cc80681.js",
+    "url": "blocksonly.js",
+    "revision": "1259e859d1c8008328c4aac358fe4d2d"
+  }, {
+    "url": "blocksonly.js.map",
+    "revision": "8f64cd720e5d40bd4ca070fd11768348"
+  }, {
+    "url": "chunks/preload_preload_json.ec826e8bfa538eebf8a4.js",
     "revision": null
   }, {
     "url": "compatibility-testing.html",
     "revision": "f5d0a3fb891b7ac457e9ecf623da2017"
+  }, {
+    "url": "compatibilitytesting.js",
+    "revision": "a00f6340f4c98f458ff1c82aabe08344"
+  }, {
+    "url": "compatibilitytesting.js.map",
+    "revision": "06b8a5ce20b41c7d82345892d10b2ddf"
+  }, {
+    "url": "gui.js",
+    "revision": "03e8bf04bd2a6992d926e30deb46898a"
   }, {
     "url": "https://assets.scratch.mit.edu/internalapi/asset/0015433a406a53f00b792424b823268c.png/get/",
     "revision": "0015433a406a53f00b792424b823268c"
@@ -4088,6 +4103,12 @@ define(['./workbox-e833d894'], (function (workbox) { 'use strict';
   }, {
     "url": "player.html",
     "revision": "f473d17effaa7ce8de46bfbd3cc2ee20"
+  }, {
+    "url": "player.js",
+    "revision": "79a494b9fe00ae1c0445cfdc5f2769b5"
+  }, {
+    "url": "player.js.map",
+    "revision": "124a2ab3c06c478ff3edefc71ff7e505"
   }, {
     "url": "static/assets/add-backdrop.3d71dd48613895c4ed9d.jpg",
     "revision": null
