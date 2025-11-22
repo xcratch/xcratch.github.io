@@ -16,7 +16,7 @@
         "https://tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
         "https://tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
         "https://yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
-        "https://yokobond.github.io/xcx-tf-knn/dist/tfknn.mjs",
+        "https://yokobond.github.io/xcx-tf-knn/dist/tfknn-entry.mjs",
         "https://yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs"
     ]
 }
