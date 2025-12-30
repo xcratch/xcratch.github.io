@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 env:
-  SCRATCH_GUI_DIR: ./scratch-gui
+  SCRATCH_EDITOR_DIR: ./scratch-editor
   XCRATCH_IO_DIR: ./xcratch.github.io
   XCRATCH_DOC_DIR: ./xcratch-doc
   PUBLIC_DIR: ./public
@@ -32,12 +32,12 @@ jobs:
         run: echo "${{ toJSON(inputs) }}"
       
       # リポジトリのチェックアウト
-      - name: Checkout scratch-gui
+      - name: Checkout scratch-editor
         uses: actions/checkout@v4
         with:
-          repository: xcratch/scratch-gui
+          repository: xcratch/scratch-editor
           ref: ${{ inputs.checkout_ref }}
-          path: ${{ env.SCRATCH_GUI_DIR }}
+          path: ${{ env.SCRATCH_EDITOR_DIR }}
       
       - name: Checkout xcratch.github.io
         uses: actions/checkout@v4
@@ -55,33 +55,56 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: ${{ env.SCRATCH_GUI_DIR }}/.nvmrc
-          cache: npm
-          cache-dependency-path: ${{ env.SCRATCH_GUI_DIR }}/package-lock.json
+          node-version-file: ${{ env.SCRATCH_EDITOR_DIR }}/.nvmrc
+      
+      # システムライブラリの依存関係のインストール
+      - name: Install system library dependencies
+        run: |
+          echo "Using pkg-config $(pkg-config --version)"
+          # These dependencies are from scratch-paint -> paper.js -> canvas
+          # See also `util/has_lib.js` in the `canvas` package
+          # There must be a better way to detect gif_lib.h than this...
+          missing_libraries="$(
+            ldconfig -p | grep -q 'libcairo\.so' || echo libcairo2-dev
+            pkg-config pangocairo || echo libpango1.0-dev
+            pkg-config libssl || echo libssl-dev
+            pkg-config libjpeg || echo libjpeg-dev
+            test -f /usr/include/gif_lib.h || echo libgif-dev
+          )"
+          echo "Missing libraries: [$missing_libraries]"
+          if [ -n "$missing_libraries" ]; then
+            sudo apt update # avoiding this is the main reason for detecting missing libraries
+            sudo apt install -y $missing_libraries
+          else
+            echo "No missing libraries"
+          fi
       
       # 依存関係のインストール
-      - name: Install dependencies
-        working-directory: ${{ env.SCRATCH_GUI_DIR }}
-        run: npm ci
+      - name: Install NPM dependencies (no cache)
+        working-directory: ${{ env.SCRATCH_EDITOR_DIR }}
+        run: NODE_ENV=development npm ci
       
       # ビルド準備
       - name: Setup preload configuration
-        run: cp ${{ env.XCRATCH_IO_DIR }}/scripts/preload-rules.json ${{ env.SCRATCH_GUI_DIR }}/scripts/preload-rules.json
+        run: |
+          cp ${{ env.XCRATCH_IO_DIR }}/scripts/preload-rules.json ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/scripts/preload-rules.json
+          cd ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui
+          npm run preload
       
       # ビルド実行
-      - name: Build scratch-gui
-        working-directory: ${{ env.SCRATCH_GUI_DIR }}
+      - name: Build packages
+        working-directory: ${{ env.SCRATCH_EDITOR_DIR }}
         run: npm run build
       
       # 公開ディレクトリの構築
       - name: Copy favicon
-        run: cp ${{ env.XCRATCH_IO_DIR }}/editor/favicon.ico ${{ env.SCRATCH_GUI_DIR }}/build/static/favicon.ico
+        run: cp ${{ env.XCRATCH_IO_DIR }}/editor/favicon.ico ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/build/static/favicon.ico
       
       - name: Setup public directory
         run: mv -T ${{ env.XCRATCH_IO_DIR }}/public ${{ env.PUBLIC_DIR }}
       
       - name: Move editor files
-        run: mv -T ${{ env.SCRATCH_GUI_DIR }}/build ${{ env.PUBLIC_DIR }}/editor
+        run: mv -T ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/build ${{ env.PUBLIC_DIR }}/editor
       
       - name: Move documentation files
         run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
