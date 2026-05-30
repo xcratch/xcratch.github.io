@@ -108,7 +108,24 @@ jobs:
       
       - name: Move documentation files
         run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
-      
+
+      - name: Checkout gh-pages branch to preserve dev/
+        uses: actions/checkout@v4
+        with:
+          repository: xcratch/xcratch.github.io
+          ref: gh-pages
+          path: ./temp-gh-pages
+        continue-on-error: true
+
+      - name: Preserve dev directory
+        run: |
+          if [ -d "./temp-gh-pages/dev" ]; then
+            echo "Preserving dev directory from gh-pages..."
+            cp -r ./temp-gh-pages/dev ${{ env.PUBLIC_DIR }}/dev
+          else
+            echo "No dev directory found in temp-gh-pages."
+          fi
+
       # デプロイ
       - name: Publish to GitHub Pages (dev)
         if: ${{ inputs.dev }}
@@ -118,7 +135,7 @@ jobs:
           publish_dir: ${{ env.PUBLIC_DIR }}
           destination_dir: ./dev
           keep_files: false
-      
+
       - name: Publish to GitHub Pages (production)
         if: ${{ !inputs.dev }}
         uses: peaceiris/actions-gh-pages@v3
@@ -126,4 +143,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.PUBLIC_DIR }}
           destination_dir: .
-          keep_files: true
+          keep_files: false
