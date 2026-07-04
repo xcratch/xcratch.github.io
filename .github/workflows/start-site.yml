@@ -110,6 +110,7 @@ jobs:
         run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
 
       - name: Checkout gh-pages branch to preserve dev/
+        if: ${{ !inputs.dev }}
         uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch.github.io
@@ -118,6 +119,7 @@ jobs:
         continue-on-error: true
 
       - name: Preserve dev directory
+        if: ${{ !inputs.dev }}
         run: |
           if [ -d "./temp-gh-pages/dev" ]; then
             echo "Preserving dev directory from gh-pages..."
