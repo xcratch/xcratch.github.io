@@ -130,8 +130,9 @@ jobs:
       - name: Prepare dev deployment with root content preservation
         if: ${{ inputs.dev }}
         run: |
-          # Move the dev build to a temp location
-          TEMP_DEV=$(mktemp -d)
+          # Move the dev build to runner temp (auto-cleaned after workflow)
+          TEMP_DEV=$RUNNER_TEMP/dev-build
+          mkdir -p $TEMP_DEV
           cp -rT ${{ env.PUBLIC_DIR }} $TEMP_DEV
           rm -rf ${{ env.PUBLIC_DIR }}
           mkdir -p ${{ env.PUBLIC_DIR }}
