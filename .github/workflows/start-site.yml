@@ -109,8 +109,7 @@ jobs:
       - name: Move documentation files
         run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
 
-      - name: Checkout gh-pages branch to preserve dev/
-        if: ${{ !inputs.dev }}
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch.github.io
@@ -128,6 +127,25 @@ jobs:
             echo "No dev directory found in temp-gh-pages."
           fi
 
+      - name: Prepare dev deployment with root content preservation
+        if: ${{ inputs.dev }}
+        run: |
+          # Move the dev build to runner temp (auto-cleaned after workflow)
+          TEMP_DEV=$RUNNER_TEMP/dev-build
+          mkdir -p $TEMP_DEV
+          cp -rT ${{ env.PUBLIC_DIR }} $TEMP_DEV
+          rm -rf ${{ env.PUBLIC_DIR }}
+          mkdir -p ${{ env.PUBLIC_DIR }}
+
+          # Copy root content from current gh-pages (excluding dev/ to replace it)
+          if [ -d "./temp-gh-pages" ]; then
+            find ./temp-gh-pages -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'dev' \
+              -exec cp -r {} ${{ env.PUBLIC_DIR }}/ \;
+          fi
+
+          # Put the new dev build at dev/
+          mv $TEMP_DEV ${{ env.PUBLIC_DIR }}/dev
+
       # デプロイ
       - name: Publish to GitHub Pages (dev)
         if: ${{ inputs.dev }}
@@ -135,8 +153,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.PUBLIC_DIR }}
-          destination_dir: ./dev
           keep_files: false
+          force_orphan: true
 
       - name: Publish to GitHub Pages (production)
         if: ${{ !inputs.dev }}
@@ -144,5 +162,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.PUBLIC_DIR }}
-          destination_dir: .
           keep_files: false
+          force_orphan: true
