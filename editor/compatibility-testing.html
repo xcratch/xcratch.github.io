@@ -1,0 +1,49 @@
+<!doctype html><html><head><script>if ('serviceWorker' in navigator) {
+        // Skip Service Worker on the webpack-dev-server. The dev build does
+        // not ship a service worker, but a stale registration from a previous
+        // production visit on the same host would trigger 'controllerchange'
+        // and reload the page in a loop (see git: "reload page on service
+        // worker controller change"). Unregister any leftovers and drop
+        // their caches so the editor can load normally.
+        var isLocalDev = location.hostname === 'localhost'
+          || location.hostname === '127.0.0.1'
+          || location.hostname === '0.0.0.0'
+          || location.port === '8601';
+
+        if (isLocalDev) {
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            regs.forEach(function (r) { r.unregister(); });
+          }).catch(function () { /* noop */ });
+          if (window.caches && caches.keys) {
+            caches.keys().then(function (keys) {
+              keys.forEach(function (k) { caches.delete(k); });
+            }).catch(function () { /* noop */ });
+          }
+        } else {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' }).then(function (registration) {
+              console.log('PWA worker registration successful', registration.scope);
+            }, function (err) {
+              console.log('PWA worker registration failed', err);
+            }).catch(function (err) {
+              console.log(err);
+            });
+          });
+
+          // Reload only when an existing Service Worker is already in control
+          // (i.e. on a repeat visit) so a newly activated SW takes effect.
+          // On the first registration the initial 'controllerchange' fired by
+          // clients.claim() would otherwise cause an unwanted reload, so skip
+          // adding the listener when there is no controller yet.
+          if (navigator.serviceWorker.controller) {
+            var refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+              if (refreshing) return;
+              refreshing = true;
+              window.location.reload();
+            });
+          }
+        }
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google" value="notranslate"><link rel="shortcut icon" href="static/favicon.ico"><title>Scratch 3.0 GUI: Compatibility Testing</title><script defer="defer" src="compatibilitytesting.js"></script><meta name="apple-mobile-web-app-title" content="Xcratch" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="default" /><link rel="manifest" href="./manifest.1342cc93635d706966c1d194266dc49f.json" crossorigin="use-credentials" /></head><body></body></html>
