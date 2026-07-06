@@ -15,6 +15,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 env:
   SCRATCH_EDITOR_DIR: ./scratch-editor
@@ -25,6 +27,9 @@ env:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     
     steps:
       # デバッグ: 入力パラメータの表示
@@ -109,11 +114,11 @@ jobs:
       - name: Move documentation files
         run: mv -T ${{ env.XCRATCH_DOC_DIR }}/docs ${{ env.PUBLIC_DIR }}/docs
 
-      - name: Checkout gh-pages branch
+      - name: Checkout pages-state branch
         uses: actions/checkout@v4
         with:
           repository: xcratch/xcratch.github.io
-          ref: gh-pages
+          ref: pages-state
           path: ./temp-gh-pages
         continue-on-error: true
 
@@ -121,10 +126,10 @@ jobs:
         if: ${{ !inputs.dev }}
         run: |
           if [ -d "./temp-gh-pages/dev" ]; then
-            echo "Preserving dev directory from gh-pages..."
+            echo "Preserving dev directory from pages-state..."
             cp -r ./temp-gh-pages/dev ${{ env.PUBLIC_DIR }}/dev
           else
-            echo "No dev directory found in temp-gh-pages."
+            echo "No dev directory found in pages-state."
           fi
 
       - name: Prepare dev deployment with root content preservation
@@ -137,7 +142,7 @@ jobs:
           rm -rf ${{ env.PUBLIC_DIR }}
           mkdir -p ${{ env.PUBLIC_DIR }}
 
-          # Copy root content from current gh-pages (excluding dev/ to replace it)
+          # Copy root content from current pages-state (excluding dev/ to replace it)
           if [ -d "./temp-gh-pages" ]; then
             find ./temp-gh-pages -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'dev' \
               -exec cp -r {} ${{ env.PUBLIC_DIR }}/ \;
@@ -146,21 +151,25 @@ jobs:
           # Put the new dev build at dev/
           mv $TEMP_DEV ${{ env.PUBLIC_DIR }}/dev
 
-      # デプロイ
-      - name: Publish to GitHub Pages (dev)
-        if: ${{ inputs.dev }}
+      # Save state for future deployments
+      - name: Save deployment state to pages-state branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.PUBLIC_DIR }}
+          publish_branch: pages-state
           keep_files: false
           force_orphan: true
 
-      - name: Publish to GitHub Pages (production)
-        if: ${{ !inputs.dev }}
-        uses: peaceiris/actions-gh-pages@v3
+      # Deploy directly to GitHub Pages via Actions
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ env.PUBLIC_DIR }}
-          keep_files: false
-          force_orphan: true
+          path: ${{ env.PUBLIC_DIR }}
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
