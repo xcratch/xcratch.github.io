@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     
     steps:
       # デバッグ: 入力パラメータの表示
@@ -161,15 +160,12 @@ jobs:
           keep_files: false
           force_orphan: true
 
-      # Deploy directly to GitHub Pages via Actions
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      # Deploy to the branch configured for GitHub Pages
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ${{ env.PUBLIC_DIR }}
-
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.PUBLIC_DIR }}
+          publish_branch: gh-pages
+          keep_files: false
+          force_orphan: true
