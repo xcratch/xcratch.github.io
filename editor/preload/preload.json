@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "name": "preload",
+  "generatedAt": "2026-11-08T12:14:30.383Z",
+  "files": [
+    "files/microbit-more.github.io/dist/microbitMore.mjs",
+    "files/tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
+    "files/tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
+    "files/yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs",
+    "files/yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs",
+    "files/yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs",
+    "files/yokobond.github.io/xcx-costumex/dist/costumex.mjs",
+    "files/yokobond.github.io/xcx-gai/dist/gai.mjs",
+    "files/yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs",
+    "files/yokobond.github.io/xcx-http-request/dist/httpRequest.mjs",
+    "files/yokobond.github.io/xcx-key-events/dist/keyEvents.mjs",
+    "files/yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs",
+    "files/yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs",
+    "files/yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
+    "files/yokobond.github.io/xcx-qr/dist/xcxQR.mjs",
+    "files/yokobond.github.io/xcx-tf-knn/dist/tfknn-entry.mjs",
+    "files/yokobond.github.io/xcx-tf-knn/dist/tfknn.mjs",
+    "files/yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs",
+    "files/yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs"
+  ],
+  "extensions": [
+    {
+      "url": "https://microbit-more.github.io/dist/microbitMore.mjs",
+      "extensionURL": "https://microbit-more.github.io/dist/microbitMore.mjs",
+      "entry": "files/microbit-more.github.io/dist/microbitMore.mjs",
+      "module": "files/microbit-more.github.io/dist/microbitMore.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-http-request/dist/httpRequest.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-http-request/dist/httpRequest.mjs",
+      "entry": "files/yokobond.github.io/xcx-http-request/dist/httpRequest.mjs",
+      "module": "files/yokobond.github.io/xcx-http-request/dist/httpRequest.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-key-events/dist/keyEvents.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-key-events/dist/keyEvents.mjs",
+      "entry": "files/yokobond.github.io/xcx-key-events/dist/keyEvents.mjs",
+      "module": "files/yokobond.github.io/xcx-key-events/dist/keyEvents.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs",
+      "entry": "files/yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs",
+      "module": "files/yokobond.github.io/xcx-gamepad/dist/webGamepad.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-gai/dist/gai.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-gai/dist/gai.mjs",
+      "entry": "files/yokobond.github.io/xcx-gai/dist/gai.mjs",
+      "module": "files/yokobond.github.io/xcx-gai/dist/gai.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-costumex/dist/costumex.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-costumex/dist/costumex.mjs",
+      "entry": "files/yokobond.github.io/xcx-costumex/dist/costumex.mjs",
+      "module": "files/yokobond.github.io/xcx-costumex/dist/costumex.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-qr/dist/xcxQR.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-qr/dist/xcxQR.mjs",
+      "entry": "files/yokobond.github.io/xcx-qr/dist/xcxQR.mjs",
+      "module": "files/yokobond.github.io/xcx-qr/dist/xcxQR.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs",
+      "entry": "files/yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs",
+      "module": "files/yokobond.github.io/xcx-browser-channel/dist/xcxBrowserChannel.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs",
+      "entry": "files/yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs",
+      "module": "files/yokobond.github.io/xcx-web-channel/dist/xcxWebChannel.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs",
+      "entry": "files/yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs",
+      "module": "files/yokobond.github.io/xcx-mesh/dist/xcxMesh.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs",
+      "entry": "files/yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs",
+      "module": "files/yokobond.github.io/xcx-arduino/dist/xcxArduino.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs",
+      "entry": "files/yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs",
+      "module": "files/yokobond.github.io/xcx-audio-analyser/dist/xcxAudioAnalyser.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs",
+      "entry": "files/yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs",
+      "module": "files/yokobond.github.io/xcx-vpen/dist/xcxVPen.mjs"
+    },
+    {
+      "url": "https://tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
+      "extensionURL": "https://tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
+      "entry": "files/tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs",
+      "module": "files/tfabworks.github.io/xcx-g2s/dist/g2s-m.mjs"
+    },
+    {
+      "url": "https://tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
+      "extensionURL": "https://tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
+      "entry": "files/tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs",
+      "module": "files/tfabworks.github.io/xcx-cameraselector/dist/cameraselector.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
+      "entry": "files/yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs",
+      "module": "files/yokobond.github.io/xcx-mp-image-embed/dist/mpImageEmbed.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-tf-knn/dist/tfknn-entry.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-tf-knn/dist/tfknn.mjs",
+      "entry": "files/yokobond.github.io/xcx-tf-knn/dist/tfknn-entry.mjs",
+      "module": "files/yokobond.github.io/xcx-tf-knn/dist/tfknn.mjs"
+    },
+    {
+      "url": "https://yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs",
+      "extensionURL": "https://yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs",
+      "entry": "files/yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs",
+      "module": "files/yokobond.github.io/xcx-mp-hand/dist/xcxMPHand.mjs"
+    }
+  ]
+}
