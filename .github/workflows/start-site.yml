@@ -86,19 +86,19 @@ jobs:
       # 依存関係のインストール
       - name: Install NPM dependencies (no cache)
         working-directory: ${{ env.SCRATCH_EDITOR_DIR }}
-        run: NODE_ENV=development npm ci
-      
-      # ビルド準備
-      - name: Setup preload configuration
-        run: |
-          cp ${{ env.XCRATCH_IO_DIR }}/scripts/preload-rules.json ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/scripts/preload-rules.json
-          cd ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui
-          npm run preload
+        run: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 NODE_ENV=development npm ci
       
       # ビルド実行
       - name: Build packages
         working-directory: ${{ env.SCRATCH_EDITOR_DIR }}
         run: npm run build
+      
+      # 先読み拡張機能のミラー作成 (preload/preload.json と preload/files/ を build に出力)
+      - name: Build preload mirror
+        run: >-
+          node ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/scripts/preload-mirror.mjs
+          --rules ${{ env.XCRATCH_IO_DIR }}/scripts/preload-rules.json
+          --out ${{ env.SCRATCH_EDITOR_DIR }}/packages/scratch-gui/build/preload
       
       # 公開ディレクトリの構築
       - name: Copy favicon
