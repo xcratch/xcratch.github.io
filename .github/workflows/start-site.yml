@@ -86,7 +86,7 @@ jobs:
       # 依存関係のインストール
       - name: Install NPM dependencies (no cache)
         working-directory: ${{ env.SCRATCH_EDITOR_DIR }}
-        run: NODE_ENV=development npm ci
+        run: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 NODE_ENV=development npm ci
       
       # ビルド実行
       - name: Build packages
